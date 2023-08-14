@@ -1,0 +1,12 @@
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\VoxelNowEngine.deps.json
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\VoxelNowEngine.dll
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\VoxelNowEngine.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.csproj.AssemblyReference.cache
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.GeneratedMSBuildEditorConfig.editorconfig
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.AssemblyInfoInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.AssemblyInfo.cs
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.csproj.CoreCompileInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.dll
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\refint\VoxelNowEngine.dll
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\ref\VoxelNowEngine.dll

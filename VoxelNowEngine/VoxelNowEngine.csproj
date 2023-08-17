@@ -8,6 +8,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Graphics\Shaders\ChunkPixelShader.glsl" />
+    <None Remove="Graphics\Shaders\ChunkVertexShader.glsl" />
+    <None Remove="Graphics\Shaders\LitPixelShader.glsl" />
+    <None Remove="Graphics\Shaders\LitVertexShader.glsl" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Graphics\Shaders\ChunkPixelShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Shaders\ChunkVertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Shaders\LitPixelShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Graphics\Shaders\LitVertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="OpenTK" Version="4.8.0" />
     <PackageReference Include="StbImageSharp" Version="2.27.13" />
   </ItemGroup>

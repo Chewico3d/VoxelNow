@@ -13,10 +13,11 @@ namespace VoxelNowEngine {
 
         internal static World currentWorld;
 
-        static WorldManager worldManager;
-        internal static RenderMaster currentRenderMaster;
+        internal static WorldManager worldManager;
+        internal static ChunkWorld chunkWorld;
+        internal static RenderControler currentRenderMaster;
 
-        Thread WorldManagerThreead;
+        internal Thread WorldManagerThreead;
 
         public Game(World initialWorld) : base(new GameWindowSettings()  , new NativeWindowSettings() { Size = new OpenTK.Mathematics.Vector2i(1920,1080)}) {
             GL.ClearColor(.7f, .8f, .9f, 1f);
@@ -36,16 +37,20 @@ namespace VoxelNowEngine {
         internal void SetWorld(World world) {
 
             if (WorldManagerThreead != null)
-                WorldManagerThreead.Abort();
+                worldManager.RuningWorld = false;
 
-            currentRenderMaster = new RenderMaster();
+            currentRenderMaster = new RenderControler();
 
             currentWorld = world;
             currentWorld.InitWorld();
 
+            if(world.properties.GenerateChunks)
+                chunkWorld = new ChunkWorld();
+
             worldManager = new WorldManager();
             WorldManagerThreead = new Thread(worldManager.StartThread);
             WorldManagerThreead.Start();
+
         }
 
         protected override void OnRenderFrame(FrameEventArgs args) {
@@ -58,13 +63,20 @@ namespace VoxelNowEngine {
                 currentRenderMaster.RenderChunks(currentWorld.mainChunkMaterial, currentWorld.mainRenderCamera);
 
             SwapBuffers();
-            worldManager.LoadDataInMainThread();
+            chunkWorld.LoadDataInMainThread();
 
         }
 
         protected override void OnUpdateFrame(FrameEventArgs args) {
             currentWorld.Update((float)args.Time);
 
+        }
+
+        protected override void OnUnload() {
+            if (worldManager != null)
+                worldManager.RuningWorld = false;
+
+            Thread.Sleep(1000 / 25);
         }
 
     }

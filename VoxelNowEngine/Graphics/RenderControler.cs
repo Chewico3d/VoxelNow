@@ -7,9 +7,12 @@ using VoxelNowEngine.Graphics.Materials;
 using VoxelNowEngine.Terrain;
 
 namespace VoxelNowEngine.Graphics {
-    internal class RenderMaster {
+    internal class RenderControler {
+        internal RenderControler instance;
         internal List<(RenderObject, Vector3i)> chunksRenders = new List<(RenderObject, Vector3i)> ();
-        
+
+        internal RenderControler() => instance = this;
+
         internal void RenderChunks(ChunkMaterial chunkMaterial, Camera camera) {
             for(int it = 0; it < chunksRenders.Count; it++) {
                 chunkMaterial.Use();

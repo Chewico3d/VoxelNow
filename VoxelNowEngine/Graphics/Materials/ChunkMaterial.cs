@@ -8,7 +8,7 @@ using VoxelNowEngine.Graphics.Textures;
 namespace VoxelNowEngine.Graphics.Materials {
     public class ChunkMaterial : Shader{
 
-        public ChunkMaterial() : base(@"C:\Chewico\Projects\VoxelNow\VoxelNowEngine\Graphics\VertexShader.glsl", @"C:\Chewico\Projects\VoxelNow\VoxelNowEngine\Graphics\PixelShader.glsl") {
+        public ChunkMaterial() : base(@"Graphics\Shaders\ChunkVertexShader.glsl", @"Graphics\Shaders\ChunkPixelShader.glsl") {
 
         }
 

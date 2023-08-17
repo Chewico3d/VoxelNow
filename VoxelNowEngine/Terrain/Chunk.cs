@@ -13,11 +13,14 @@ namespace VoxelNowEngine.Terrain {
             xID = x; yID = y; zID = z;
         }
 
+        public byte GetBlock(int x, int y, int z) {
+            x++; y++; z++;
+            return solidBlocks[x + y * 18 + z * 258 * 18];
+        }
         public void SetBlock(int x, int y, int z, byte value) {
             x++;y++;z++;
 
             solidBlocks[x + y * 18 + z * 258 * 18] = value;
-
         }
 
     }

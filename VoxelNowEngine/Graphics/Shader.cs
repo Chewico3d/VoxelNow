@@ -102,6 +102,18 @@ namespace VoxelNowEngine.Graphics {
             SetMatrix4("transform", resultMatrix);
 
         }
+        public virtual void SetTransformationMatrix(Camera camera, Vector3 Position, Vector3 Scale) {
+            Matrix4 InvertZ = Matrix4.CreateScale(1, 1, -1);
+            Matrix4 localMatrix = Matrix4.CreateTranslation(Position * new Vector3(1, 1, -1));
+            localMatrix = Matrix4.CreateScale(Scale) * localMatrix;
+            Matrix4 generalMatrix = camera.GetCameraMatrix();
+
+            Matrix4 resultMatrix = InvertZ * localMatrix * generalMatrix;
+
+            SetMatrix4("transform", resultMatrix);
+
+        }
 
     }
+    //te quiero mucho guapoooo
 }

@@ -65,6 +65,26 @@ namespace VoxelNowEngine.Graphics.Objects
 
         }
 
+        internal void UpdateData(Data data) {
+
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vPositionBuffer);
+            GL.BufferData(BufferTarget.ArrayBuffer, data.v_Positions.Length, data.v_Positions, BufferUsageHint.StaticDraw);
+
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vNormalBuffer);
+            GL.BufferData(BufferTarget.ArrayBuffer, data.v_Normals.Length, data.v_Normals, BufferUsageHint.StaticDraw);
+            
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vTextureBuffer);
+            GL.BufferData(BufferTarget.ArrayBuffer, data.v_Textures.Length, data.v_Textures, BufferUsageHint.StaticDraw);
+
+            GL.BindBuffer(BufferTarget.ArrayBuffer, vAmbientOclusion);
+            GL.BufferData(BufferTarget.ArrayBuffer, data.v_AmbientOclusion.Length, data.v_AmbientOclusion, BufferUsageHint.StaticDraw);
+
+            GL.BindBuffer(BufferTarget.ElementArrayBuffer, IndexBuffer);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, data.Indices.Length * sizeof(ushort), data.Indices, BufferUsageHint.StaticDraw);
+            NumberOfIndices = data.Indices.Length;
+
+        }
+
         internal class Data {
             internal byte[] v_Positions;
             internal byte[] v_Normals;

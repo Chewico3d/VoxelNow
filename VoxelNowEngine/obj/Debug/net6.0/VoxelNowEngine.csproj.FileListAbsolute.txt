@@ -10,3 +10,7 @@ C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.dll
 C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\refint\VoxelNowEngine.dll
 C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\VoxelNowEngine.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNowEngine\obj\Debug\net6.0\ref\VoxelNowEngine.dll
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\Graphics\Shaders\ChunkPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\Graphics\Shaders\ChunkVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\Graphics\Shaders\LitPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNowEngine\bin\Debug\net6.0\Graphics\Shaders\LitVertexShader.glsl

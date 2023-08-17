@@ -14,7 +14,7 @@ namespace VoxelNowGame {
         Vector2 viewDirection;
         public float FOVadd = MathF.PI * 45f / 180f;
 
-        public Vector3 playerPosition = new Vector3(0.5f, 0.5f, -3);
+        public Vector3 playerPosition = new Vector3(0, 10, 0);
 
         public void SetInitialPos() {
             Vector2 mousePosition = Program.mainGame.MousePosition;
@@ -59,8 +59,23 @@ namespace VoxelNowGame {
                 FOVadd += deltaTime * -.2f;
         }
 
+        internal Vector3 GetPlayerDirection() {
+
+            Vector3 Direction = Vector3.Zero;
+            float euler2rad = MathF.PI / 180;
+
+            Direction.X = MathF.Sin(viewDirection.X) * MathF.Cos(-viewDirection.Y);
+            Direction.Z = MathF.Cos(viewDirection.X) * MathF.Cos(-viewDirection.Y);
+
+            Direction.Y = MathF.Sin(-viewDirection.Y);
+
+            return Direction;
+
+        
+        } 
         internal Quaternion getCameraOrientation() {
             return Quaternion.FromEulerAngles(viewDirection.Y, viewDirection.X, 0);
+            
         }
 
     }

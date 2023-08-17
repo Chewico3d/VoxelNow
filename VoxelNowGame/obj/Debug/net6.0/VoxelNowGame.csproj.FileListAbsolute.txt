@@ -32,3 +32,7 @@ C:\Chewico\Projects\VoxelNow\VoxelNowGame\obj\Debug\net6.0\refint\VoxelNowGame.d
 C:\Chewico\Projects\VoxelNow\VoxelNowGame\obj\Debug\net6.0\VoxelNowGame.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNowGame\obj\Debug\net6.0\VoxelNowGame.genruntimeconfig.cache
 C:\Chewico\Projects\VoxelNow\VoxelNowGame\obj\Debug\net6.0\ref\VoxelNowGame.dll
+C:\Chewico\Projects\VoxelNow\VoxelNowGame\bin\Debug\net6.0\Graphics\Shaders\ChunkPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNowGame\bin\Debug\net6.0\Graphics\Shaders\ChunkVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNowGame\bin\Debug\net6.0\Graphics\Shaders\LitPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNowGame\bin\Debug\net6.0\Graphics\Shaders\LitVertexShader.glsl

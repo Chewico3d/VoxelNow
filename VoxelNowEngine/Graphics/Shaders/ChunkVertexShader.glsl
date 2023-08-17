@@ -8,6 +8,7 @@ out vec3 pos;
 out vec3 normal;
 out vec2 texturesPos;
 out float ambientOclusion;
+out vec4 transformedPosition;
 
 
 const vec3 normalTable[6] = vec3[](
@@ -23,7 +24,8 @@ uniform mat4 transform;
 
 void main()
 {
-    gl_Position = vec4(aPos, 1.0) * transform; 
+    transformedPosition = vec4(aPos, 1.0) * transform;
+    gl_Position = transformedPosition; 
     normal = normalTable[normalID];
     texturesPos = UVs;
     pos = aPos;

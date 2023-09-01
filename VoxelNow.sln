@@ -3,9 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNowEngine", "VoxelNowEngine\VoxelNowEngine.csproj", "{1BD8AE6B-5896-4411-B6CA-250AD0365895}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Client", "VoxelNow.Client\VoxelNow.Client.csproj", "{92955638-64DC-41CD-AF55-3F22A5BDB75A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelNowGame", "VoxelNowGame\VoxelNowGame.csproj", "{3311F64A-83E5-4271-9909-77D405E964F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Server", "VoxelNow.Server\VoxelNow.Server.csproj", "{385AF6BC-6948-46E5-ADAD-1FFFD7B6D4B3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Rendering", "VoxelNow.Rendering\VoxelNow.Rendering.csproj", "{B5B9BF5D-5014-44F7-9132-3AE72DC87343}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Assets", "VoxelNow.Assets\VoxelNow.Assets.csproj", "{869E82CC-83FF-46BB-A38F-709295F905E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelNow.Core", "VoxelNow.Core\VoxelNow.Core.csproj", "{BDF6DB58-BF98-4E2B-9ED2-1D41CDBF0DE9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +19,26 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{1BD8AE6B-5896-4411-B6CA-250AD0365895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{1BD8AE6B-5896-4411-B6CA-250AD0365895}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{1BD8AE6B-5896-4411-B6CA-250AD0365895}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{1BD8AE6B-5896-4411-B6CA-250AD0365895}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3311F64A-83E5-4271-9909-77D405E964F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3311F64A-83E5-4271-9909-77D405E964F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3311F64A-83E5-4271-9909-77D405E964F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3311F64A-83E5-4271-9909-77D405E964F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92955638-64DC-41CD-AF55-3F22A5BDB75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92955638-64DC-41CD-AF55-3F22A5BDB75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92955638-64DC-41CD-AF55-3F22A5BDB75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92955638-64DC-41CD-AF55-3F22A5BDB75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{385AF6BC-6948-46E5-ADAD-1FFFD7B6D4B3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{385AF6BC-6948-46E5-ADAD-1FFFD7B6D4B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{385AF6BC-6948-46E5-ADAD-1FFFD7B6D4B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{385AF6BC-6948-46E5-ADAD-1FFFD7B6D4B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5B9BF5D-5014-44F7-9132-3AE72DC87343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B9BF5D-5014-44F7-9132-3AE72DC87343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B9BF5D-5014-44F7-9132-3AE72DC87343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B9BF5D-5014-44F7-9132-3AE72DC87343}.Release|Any CPU.Build.0 = Release|Any CPU
+		{869E82CC-83FF-46BB-A38F-709295F905E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{869E82CC-83FF-46BB-A38F-709295F905E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{869E82CC-83FF-46BB-A38F-709295F905E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{869E82CC-83FF-46BB-A38F-709295F905E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF6DB58-BF98-4E2B-9ED2-1D41CDBF0DE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF6DB58-BF98-4E2B-9ED2-1D41CDBF0DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF6DB58-BF98-4E2B-9ED2-1D41CDBF0DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF6DB58-BF98-4E2B-9ED2-1D41CDBF0DE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

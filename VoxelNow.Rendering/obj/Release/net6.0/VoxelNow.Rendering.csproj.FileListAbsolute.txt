@@ -1,0 +1,17 @@
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\Shaders\FloatingPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\Shaders\FloatingVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\VoxelNow.Rendering.deps.json
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\VoxelNow.Rendering.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\VoxelNow.Rendering.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\VoxelNow.Assets.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Release\net6.0\VoxelNow.Assets.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.csproj.AssemblyReference.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.GeneratedMSBuildEditorConfig.editorconfig
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.AssemblyInfoInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.AssemblyInfo.cs
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.csproj.CoreCompileInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.csproj.CopyComplete
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\refint\VoxelNow.Rendering.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\VoxelNow.Rendering.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Release\net6.0\ref\VoxelNow.Rendering.dll

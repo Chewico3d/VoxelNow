@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Shaders\FloatingPixelShader.glsl" />
+    <None Remove="Shaders\FloatingVertexShader.glsl" />
+    <None Remove="Shaders\SolidChunkPixelShader.glsl" />
+    <None Remove="Shaders\SolidChunkVertexShader.glsl" />
+    <None Remove="Textures\SolidBlocksTexture.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Shaders\SolidChunkPixelShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shaders\FloatingPixelShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shaders\SolidChunkVertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shaders\FloatingVertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Textures\SolidBlocksTexture.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>

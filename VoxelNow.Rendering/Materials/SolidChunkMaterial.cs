@@ -21,5 +21,13 @@ namespace VoxelNow.Rendering.Materials {
             tiledTexture.Use();
 
         }
+
+        internal void SetSun(float xDir, float yDir, float zDir) {
+
+            float magnitude = MathF.Sqrt(xDir * xDir + yDir * yDir + zDir * zDir);
+            float mult = 1 / magnitude;
+            SetUniform3f("sunDir", xDir * mult, yDir * mult, zDir * mult);
+
+        }
     }
 }

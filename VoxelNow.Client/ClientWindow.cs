@@ -34,6 +34,24 @@ namespace VoxelNow.Client {
                     }
                 }
             }
+            SolidCunkFabricData solidChunkData2 = new SolidCunkFabricData();
+            solidChunkData2.voxelsIDs = new ushort[34 * 34 * 34];
+            for (int x = 0; x < 32; x++) {
+                for (int z = 0; z < 32; z++) {
+                    for (int y = 0; y < 32; y++) {
+
+                        int midX = x - 16;
+                        int midY = y - 16;
+                        int midZ = z - 16;
+
+                        int dist = midX * midX + midY * midY + midZ * midZ;
+
+                        if (dist < 15 * 15)
+                            solidChunkData2.SetVoxel(x, y, z, 1);
+
+                    }
+                }
+            }
 
             GL.Enable(EnableCap.CullFace);
             GL.CullFace(CullFaceMode.Back);
@@ -42,6 +60,8 @@ namespace VoxelNow.Client {
 
             scene.Initialize();
             scene.GenerateRenderObject(solidChunkData);
+            uint objID = scene.GenerateRenderObject(solidChunkData2);
+            scene.SetObjectPosition(objID, -32, 0, 0);
             Program.nativeWindow = this;
             Program.nativeWindow.MousePosition = new OpenTK.Mathematics.Vector2(1280 / 2, 720 / 2);
         }

@@ -34,3 +34,5 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\VoxelNow.Client.ge
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\ref\VoxelNow.Client.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Core.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Core.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.API.pdb

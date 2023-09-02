@@ -38,7 +38,7 @@ namespace VoxelNow.Rendering.RenderCollection {
         }
 
         public void SetRenderObjectPosition(int objectID, float posX, float posY, float posZ) {
-            throw new NotImplementedException();
+            renderObjectsPositions[objectID] = (posX, posY, posZ);
         }
 
         public IRenderObject GetObject(int objectID) {

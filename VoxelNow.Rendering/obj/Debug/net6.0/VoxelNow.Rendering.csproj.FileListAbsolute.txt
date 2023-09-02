@@ -13,3 +13,5 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Debug\net6.0\ref\VoxelNow.Re
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Core.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Core.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Debug\net6.0\VoxelNow.Rendering.csproj.CopyComplete
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.API.pdb

@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using VoxelNow.Core;
 using VoxelNow.Rendering.FabricData;
 using VoxelNow.Rendering.MeshData;
+using VoxelNow.API;
 
 namespace VoxelNow.Rendering.Fabrics {
     internal class SolidChunkFabric : IObjectFabric {
@@ -14,6 +15,7 @@ namespace VoxelNow.Rendering.Fabrics {
 
         List<byte> v_Positions = new List<byte>();
         List<byte> v_UV = new List<byte>();
+        List<byte> v_Normals = new List<byte>();
         List<byte> ambientOclussion = new List<byte>();
         List<ushort> indices = new List<ushort>();
 
@@ -84,6 +86,8 @@ namespace VoxelNow.Rendering.Fabrics {
                     vertexAO[vertex] = ambientOcclusion;    
                     ambientOclussion.Add(ambientOcclusion);
 
+                    v_Normals.Add((byte)direction);
+
                 }
 
                 if (vertexAO[0] + vertexAO[3] > vertexAO[1] + vertexAO[2]) {
@@ -117,16 +121,16 @@ namespace VoxelNow.Rendering.Fabrics {
             int checkDir1Y = VoxelData.ambientOclusionCheckDirection[directionOffset + vertexOffset + secondValueOffset + 1];
             int checkDir1Z = VoxelData.ambientOclusionCheckDirection[directionOffset + vertexOffset + secondValueOffset + 2];
             
-            ushort value0 = workingData.GetVoxel(posX + checkDir0X + UpX, posY + checkDir0Y + UpY, posZ + checkDir0Z + UpZ);
-            ushort value1 = workingData.GetVoxel(posX + checkDir1X + UpX, posY + checkDir1Y + UpY, posZ + checkDir1Z + UpZ);
-            ushort valueMiddle = workingData.GetVoxel(posX + checkDir0X + checkDir1X + UpX, posY + checkDir0Y + checkDir1Y + UpY, posZ + checkDir0Z + checkDir1Z + UpZ);
+            bool value0IsSolid = IsSolidBlock(posX + checkDir0X + UpX, posY + checkDir0Y + UpY, posZ + checkDir0Z + UpZ);
+            bool value1IsSolid = IsSolidBlock(posX + checkDir1X + UpX, posY + checkDir1Y + UpY, posZ + checkDir1Z + UpZ);
+            bool valueMiddle = IsSolidBlock(posX + checkDir0X + checkDir1X + UpX, posY + checkDir0Y + checkDir1Y + UpY, posZ + checkDir0Z + checkDir1Z + UpZ);
 
             int ambientID = 0;
-            if (value0 != 0)
+            if (value0IsSolid)
                 ambientID += 1;
-            if (valueMiddle != 0)
+            if (valueMiddle)
                 ambientID += 2;
-            if (value1 != 0)
+            if (value1IsSolid)
                 ambientID += 4;
 
             return VoxelData.ambientOcclusionResult[ambientID];
@@ -138,6 +142,8 @@ namespace VoxelNow.Rendering.Fabrics {
             workingData = (SolidCunkFabricData)fabricData;
             v_Positions.Clear();
             v_UV.Clear();
+            v_Normals.Clear();
+            ambientOclussion.Clear();
             indices.Clear();
 
             for(int x = 0; x < ChunkGenerationConstants.voxelSizeX; x++) {
@@ -153,6 +159,7 @@ namespace VoxelNow.Rendering.Fabrics {
             solidChunkMeshData.indices = indices.ToArray();
             solidChunkMeshData.UVs = v_UV.ToArray();
             solidChunkMeshData.v_AmbientOclusion = ambientOclussion.ToArray();
+            solidChunkMeshData.v_Normal = v_Normals.ToArray();
 
             return solidChunkMeshData;
 

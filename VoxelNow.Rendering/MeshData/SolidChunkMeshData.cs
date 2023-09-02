@@ -11,6 +11,7 @@ namespace VoxelNow.Rendering.MeshData {
         internal byte[] v_Positions;
         internal byte[] UVs;
         internal byte[] v_AmbientOclusion;
+        internal byte[] v_Normal;
         internal ushort[] indices;
 
     }

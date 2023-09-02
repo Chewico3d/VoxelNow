@@ -8,6 +8,7 @@ in float AO;
 uniform sampler2D baseTexture;
 uniform int textureSizeX;
 uniform int textureSizeY;
+uniform vec3 sunDir;
 
 void main()
 {

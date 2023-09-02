@@ -215,9 +215,22 @@
           }
         }
       },
+      "VoxelNow.API/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/VoxelNow.API.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VoxelNow.API.dll": {}
+        }
+      },
       "VoxelNow.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "VoxelNow.API": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/VoxelNow.Core.dll": {}
         },
@@ -453,6 +466,11 @@
         "useSharedDesignerContext.txt",
         "version.txt"
       ]
+    },
+    "VoxelNow.API/1.0.0": {
+      "type": "project",
+      "path": "../VoxelNow.API/VoxelNow.API.csproj",
+      "msbuildProject": "../VoxelNow.API/VoxelNow.API.csproj"
     },
     "VoxelNow.Core/1.0.0": {
       "type": "project",

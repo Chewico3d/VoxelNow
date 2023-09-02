@@ -41,6 +41,7 @@ namespace VoxelNow.Rendering
         public void RenderScene() {
 
             solidBlocksTexture.Use();
+            solidChunkMaterial.SetSun(1, 5, 3);
             renderCollections[1].Draw(mainRenderCamera, solidChunkMaterial);
             renderCollections[0].Draw(mainRenderCamera, floatingMaterial);
 

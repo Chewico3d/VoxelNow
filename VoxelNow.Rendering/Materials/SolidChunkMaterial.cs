@@ -8,7 +8,7 @@ using VoxelNow.Rendering.VallVoxel.Client.Graphics;
 
 namespace VoxelNow.Rendering.Materials {
     internal class SolidChunkMaterial : Shader {
-        internal SolidChunkMaterial() : base("Shaders/SolidChunkVertexShader.glsl", "Shaders/SolidChunkPixelShader.glsl") {
+        internal SolidChunkMaterial() : base("AssetPack/Shaders/SolidChunkVertexShader.glsl", "AssetPack/Shaders/SolidChunkPixelShader.glsl") {
 
             
 

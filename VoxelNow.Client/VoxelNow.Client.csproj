@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\VoxelNow.Core\VoxelNow.Core.csproj" />
     <ProjectReference Include="..\VoxelNow.Rendering\VoxelNow.Rendering.csproj" />
   </ItemGroup>
 

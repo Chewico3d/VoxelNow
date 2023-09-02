@@ -1,9 +1,4 @@
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Client.exe
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\Shaders\SolidChunkPixelShader.glsl
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\Shaders\FloatingPixelShader.glsl
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\Shaders\SolidChunkVertexShader.glsl
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\Shaders\FloatingVertexShader.glsl
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\Textures\SolidBlocksTexture.png
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Client.deps.json
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Client.runtimeconfig.json
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Client.dll
@@ -24,10 +19,8 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\runtimes\osx-arm64
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\runtimes\osx-x64\native\libglfw.3.dylib
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\runtimes\win-x64\native\glfw3.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\runtimes\win-x86\native\glfw3.dll
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Assets.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Rendering.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Rendering.pdb
-C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Assets.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\VoxelNow.Client.csproj.AssemblyReference.cache
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\VoxelNow.Client.GeneratedMSBuildEditorConfig.editorconfig
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\VoxelNow.Client.AssemblyInfoInputs.cache
@@ -39,3 +32,5 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\refint\VoxelNow.Cl
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\VoxelNow.Client.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\VoxelNow.Client.genruntimeconfig.cache
 C:\Chewico\Projects\VoxelNow\VoxelNow.Client\obj\Debug\net6.0\ref\VoxelNow.Client.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\VoxelNow.Core.pdb

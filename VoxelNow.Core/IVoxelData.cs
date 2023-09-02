@@ -10,7 +10,11 @@ namespace VoxelNow.Core {
         public uint voxelID { get; }
 
         public VoxelType voxelType { get; }
-        
+        public VoxelRenderingFaceMode renderingFaceMode { get; }
+
+        //Case solid
+        public TextureCoord[] textureCoordsFaces { get; }
+
 
     }
 }

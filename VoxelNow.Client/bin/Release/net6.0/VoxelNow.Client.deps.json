@@ -159,16 +159,19 @@
           }
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
-      "VoxelNow.Assets/1.0.0": {
+      "StbImageSharp/2.27.13": {
         "runtime": {
-          "VoxelNow.Assets.dll": {}
+          "lib/netstandard2.0/StbImageSharp.dll": {
+            "assemblyVersion": "2.27.13.0",
+            "fileVersion": "2.27.13.0"
+          }
         }
       },
+      "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
       "VoxelNow.Rendering/1.0.0": {
         "dependencies": {
           "OpenTK": "4.8.0",
-          "VoxelNow.Assets": "1.0.0"
+          "StbImageSharp": "2.27.13"
         },
         "runtime": {
           "VoxelNow.Rendering.dll": {}
@@ -259,17 +262,19 @@
       "path": "opentk.windowing.graphicslibraryframework/4.8.0",
       "hashPath": "opentk.windowing.graphicslibraryframework.4.8.0.nupkg.sha512"
     },
+    "StbImageSharp/2.27.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-tHnP2RHgFzWbOS96UqvRO/LYU1WmpMT1bKiig45we+rpaXacBr11Fq2IBF+MqlgyLyNXxRz18E66qr4R9YlSbg==",
+      "path": "stbimagesharp/2.27.13",
+      "hashPath": "stbimagesharp.2.27.13.nupkg.sha512"
+    },
     "System.Runtime.CompilerServices.Unsafe/5.0.0": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-ZD9TMpsmYJLrxbbmdvhwt9YEgG5WntEnZ/d1eH8JBX9LBp+Ju8BSBhUGbZMNVHHomWo2KVImJhTDl2hIgw/6MA==",
       "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
-    },
-    "VoxelNow.Assets/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "VoxelNow.Rendering/1.0.0": {
       "type": "project",

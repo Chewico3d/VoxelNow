@@ -1,10 +1,9 @@
 ﻿using OpenTK.Graphics.OpenGL4;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
-
+using VoxelNow.Core;
 using VoxelNow.Rendering;
 using VoxelNow.Rendering.FabricData;
-using VoxelNow.Rendering.MeshData;
 using VoxelNow.Rendering.RenderObjects;
 
 namespace VoxelNow.Client {
@@ -15,8 +14,12 @@ namespace VoxelNow.Client {
         Scene scene = new Scene();
         playerScript playerScript = new playerScript();
 
+
+
         protected override void OnLoad() {
 
+            VoxelNowAssetsDatabase.LoadDatabaseAssembly();
+            
             SolidCunkFabricData solidChunkData = new SolidCunkFabricData();
             solidChunkData.voxelsIDs = new ushort[34 * 34 * 34];
 
@@ -24,7 +27,10 @@ namespace VoxelNow.Client {
                 for(int z = 0; z < 32; z++) {
                     for(int y = 0; y < 4; y++) {
 
-                        solidChunkData.SetVoxel(x, y, z, 1);
+                        if(y == 3)
+                            solidChunkData.SetVoxel(x, y, z, 2);
+                        else
+                            solidChunkData.SetVoxel(x, y, z, 1);
                     }
                 }
             }

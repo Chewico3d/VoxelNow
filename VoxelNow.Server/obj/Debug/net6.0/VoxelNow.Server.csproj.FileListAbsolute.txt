@@ -1,0 +1,5 @@
+C:\Chewico\Projects\VoxelNow\VoxelNow.Server\obj\Debug\net6.0\VoxelNow.Server.csproj.AssemblyReference.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Server\obj\Debug\net6.0\VoxelNow.Server.GeneratedMSBuildEditorConfig.editorconfig
+C:\Chewico\Projects\VoxelNow\VoxelNow.Server\obj\Debug\net6.0\VoxelNow.Server.AssemblyInfoInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Server\obj\Debug\net6.0\VoxelNow.Server.AssemblyInfo.cs
+C:\Chewico\Projects\VoxelNow\VoxelNow.Server\obj\Debug\net6.0\VoxelNow.Server.csproj.CoreCompileInputs.cache

@@ -1,0 +1,10 @@
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\Shaders\SolidChunkPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\Shaders\FloatingPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\Shaders\SolidChunkVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\Shaders\FloatingVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\Textures\SolidBlocksTexture.png
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\VoxelNow.Assets.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\VoxelNow.Assets.deps.json
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\VoxelNow.Assets.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Client\bin\Debug\net6.0\AssetPack\VoxelNow.Core.pdb

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VoxelNow.Assets\VoxelNow.Assets.csproj" />
+    <ProjectReference Include="..\VoxelNow.Core\VoxelNow.Core.csproj" />
   </ItemGroup>
 
 </Project>

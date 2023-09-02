@@ -215,14 +215,14 @@
           }
         }
       },
-      "VoxelNow.Assets/1.0.0": {
+      "VoxelNow.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "compile": {
-          "bin/placeholder/VoxelNow.Assets.dll": {}
+          "bin/placeholder/VoxelNow.Core.dll": {}
         },
         "runtime": {
-          "bin/placeholder/VoxelNow.Assets.dll": {}
+          "bin/placeholder/VoxelNow.Core.dll": {}
         }
       }
     }
@@ -439,17 +439,17 @@
         "version.txt"
       ]
     },
-    "VoxelNow.Assets/1.0.0": {
+    "VoxelNow.Core/1.0.0": {
       "type": "project",
-      "path": "../VoxelNow.Assets/VoxelNow.Assets.csproj",
-      "msbuildProject": "../VoxelNow.Assets/VoxelNow.Assets.csproj"
+      "path": "../VoxelNow.Core/VoxelNow.Core.csproj",
+      "msbuildProject": "../VoxelNow.Core/VoxelNow.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
       "OpenTK >= 4.8.0",
       "StbImageSharp >= 2.27.13",
-      "VoxelNow.Assets >= 1.0.0"
+      "VoxelNow.Core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -484,8 +484,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Assets\\VoxelNow.Assets.csproj": {
-              "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Assets\\VoxelNow.Assets.csproj"
+            "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Core\\VoxelNow.Core.csproj": {
+              "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Core\\VoxelNow.Core.csproj"
             }
           }
         }

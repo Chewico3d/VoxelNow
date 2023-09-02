@@ -9,6 +9,7 @@
       "VoxelNow.Client/1.0.0": {
         "dependencies": {
           "OpenTK": "4.8.0",
+          "VoxelNow.Core": "1.0.0",
           "VoxelNow.Rendering": "1.0.0"
         },
         "runtime": {
@@ -168,16 +169,16 @@
         }
       },
       "System.Runtime.CompilerServices.Unsafe/5.0.0": {},
-      "VoxelNow.Assets/1.0.0": {
+      "VoxelNow.Core/1.0.0": {
         "runtime": {
-          "VoxelNow.Assets.dll": {}
+          "VoxelNow.Core.dll": {}
         }
       },
       "VoxelNow.Rendering/1.0.0": {
         "dependencies": {
           "OpenTK": "4.8.0",
           "StbImageSharp": "2.27.13",
-          "VoxelNow.Assets": "1.0.0"
+          "VoxelNow.Core": "1.0.0"
         },
         "runtime": {
           "VoxelNow.Rendering.dll": {}
@@ -282,7 +283,7 @@
       "path": "system.runtime.compilerservices.unsafe/5.0.0",
       "hashPath": "system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512"
     },
-    "VoxelNow.Assets/1.0.0": {
+    "VoxelNow.Core/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

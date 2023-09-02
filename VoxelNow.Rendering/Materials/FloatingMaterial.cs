@@ -8,7 +8,7 @@ using VoxelNow.Rendering.VallVoxel.Client.Graphics;
 namespace VoxelNow.Rendering.Materials {
     internal class FloatingMaterial : Shader{
 
-        internal FloatingMaterial() : base("Shaders/FloatingVertexShader.glsl", "Shaders/FloatingPixelShader.glsl") {
+        internal FloatingMaterial() : base("AssetPack/Shaders/FloatingVertexShader.glsl", "AssetPack/Shaders/FloatingPixelShader.glsl") {
 
         }
     }

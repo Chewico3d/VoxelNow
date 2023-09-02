@@ -1,0 +1,12 @@
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Release\net6.0\VoxelNow.Core.deps.json
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Release\net6.0\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Release\net6.0\VoxelNow.Core.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.csproj.AssemblyReference.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.AssemblyInfoInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.AssemblyInfo.cs
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.csproj.CoreCompileInputs.cache
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\refint\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\VoxelNow.Core.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Release\net6.0\ref\VoxelNow.Core.dll

@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoxelNow.Core;
 using VoxelNow.Rendering.FabricData;
 using VoxelNow.Rendering.MeshData;
 
@@ -18,25 +19,40 @@ namespace VoxelNow.Rendering.Fabrics {
 
         SolidCunkFabricData workingData;
 
+        bool IsSolidBlock(int x, int y, int z) {
+            ushort voxelID = workingData.GetVoxel(x, y, z);
+            if (voxelID == 0)
+                return false;
+            return VoxelNowAssetsDatabase.voxelsData[voxelID].voxelType == VoxelType.SolidVoxel;
+
+        }
+
+        TextureCoord getTextureCoord(ushort voxelID, int direction) {
+            if(VoxelNowAssetsDatabase.voxelsData[voxelID].renderingFaceMode == VoxelRenderingFaceMode.Static)
+                return VoxelNowAssetsDatabase.voxelsData[voxelID].textureCoordsFaces[direction];
+            return new TextureCoord(255,255);
+        }
+
         void ProcessVoxel(int x, int y, int z) {
 
-            ushort voxelID = workingData.GetVoxel(x, y, z);
-
-            if (voxelID == 0)
+            if (!IsSolidBlock(x,y,z))
                 return;
 
             for(int direction = 0; direction < 6; direction++) {
 
-                ushort neighbor = workingData.GetVoxel(x + VoxelData.searchOrder[direction * 3 + 0],
+                bool isNeighbourSolidBlock = IsSolidBlock(x + VoxelData.searchOrder[direction * 3 + 0],
                     y + VoxelData.searchOrder[direction * 3 + 1],
                     z + VoxelData.searchOrder[direction * 3 + 2]);
 
-                if (neighbor != 0)
+                if (isNeighbourSolidBlock)
                     continue;
+                ushort voxelID = workingData.GetVoxel(x, y, z);
 
                 int initialVertexID = v_Positions.Count / 3;
 
                 byte[] vertexAO = new byte[4];
+
+                TextureCoord textureCoord = getTextureCoord(voxelID, direction);
                 
                 for(int vertex = 0; vertex < 4; vertex++) {
 
@@ -58,8 +74,8 @@ namespace VoxelNow.Rendering.Fabrics {
                     v_Positions.Add((byte)positionY);
                     v_Positions.Add((byte)positionZ);
 
-                    int UV_CordX = VoxelData.UV_Cords[vertex * 2 + 0];
-                    int UV_CordY = VoxelData.UV_Cords[vertex * 2 + 1];
+                    int UV_CordX = VoxelData.UV_Cords[vertex * 2 + 0] + textureCoord.posX;
+                    int UV_CordY = VoxelData.UV_Cords[vertex * 2 + 1] + textureCoord.posY;
 
                     v_UV.Add((byte)UV_CordX);
                     v_UV.Add((byte)UV_CordY);

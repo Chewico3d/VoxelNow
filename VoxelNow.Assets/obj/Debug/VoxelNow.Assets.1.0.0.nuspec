@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>VoxelNow.Assets</id>
+    <version>1.0.0</version>
+    <authors>VoxelNow.Assets</authors>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework="net6.0">
+        <dependency id="VoxelNow.API" version="1.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <contentFiles>
+      <files include="any/net6.0/Shaders/SolidChunkPixelShader.glsl" buildAction="Content" />
+      <files include="any/net6.0/Shaders/FloatingPixelShader.glsl" buildAction="Content" />
+      <files include="any/net6.0/Shaders/SolidChunkVertexShader.glsl" buildAction="Content" />
+      <files include="any/net6.0/Shaders/FloatingVertexShader.glsl" buildAction="Content" />
+      <files include="any/net6.0/Textures/SolidBlocksTexture.png" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Assets.dll" target="lib\net6.0\VoxelNow.Assets.dll" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\SolidChunkPixelShader.glsl" target="content\Shaders\SolidChunkPixelShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\SolidChunkPixelShader.glsl" target="contentFiles\any\net6.0\Shaders\SolidChunkPixelShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\FloatingPixelShader.glsl" target="content\Shaders\FloatingPixelShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\FloatingPixelShader.glsl" target="contentFiles\any\net6.0\Shaders\FloatingPixelShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\SolidChunkVertexShader.glsl" target="content\Shaders\SolidChunkVertexShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\SolidChunkVertexShader.glsl" target="contentFiles\any\net6.0\Shaders\SolidChunkVertexShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\FloatingVertexShader.glsl" target="content\Shaders\FloatingVertexShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\FloatingVertexShader.glsl" target="contentFiles\any\net6.0\Shaders\FloatingVertexShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Textures\SolidBlocksTexture.png" target="content\Textures\SolidBlocksTexture.png" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Textures\SolidBlocksTexture.png" target="contentFiles\any\net6.0\Textures\SolidBlocksTexture.png" />
+  </files>
+</package>

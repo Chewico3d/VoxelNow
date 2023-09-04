@@ -18,6 +18,10 @@ namespace VoxelNow.Rendering {
             int Handle;
             Dictionary<string, int> uniformReference = new Dictionary<string, int>();
             internal Shader(string vertexPath, string fragmentPath) {
+                if (!File.Exists(vertexPath))
+                    throw new Exception("vertex path : " + vertexPath + " not fount");
+                if (!File.Exists(fragmentPath))
+                    throw new Exception("vertex path : " + fragmentPath + " not fount");
                 string VertexShaderSource = File.ReadAllText(vertexPath);
 
                 string FragmentShaderSource = File.ReadAllText(fragmentPath);

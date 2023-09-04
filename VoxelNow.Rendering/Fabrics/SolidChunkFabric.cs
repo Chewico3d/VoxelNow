@@ -15,8 +15,9 @@ namespace VoxelNow.Rendering.Fabrics {
 
         List<byte> v_Positions = new List<byte>();
         List<byte> v_UV = new List<byte>();
+        List<byte> v_PlaneUV = new List<byte>();
+        List<byte> v_ambientOclussion = new List<byte>();
         List<byte> v_Normals = new List<byte>();
-        List<byte> ambientOclussion = new List<byte>();
         List<ushort> indices = new List<ushort>();
 
         SolidCunkFabricData workingData;
@@ -76,19 +77,33 @@ namespace VoxelNow.Rendering.Fabrics {
                     v_Positions.Add((byte)positionY);
                     v_Positions.Add((byte)positionZ);
 
-                    int UV_CordX = VoxelData.UV_Cords[vertex * 2 + 0] + textureCoord.posX;
-                    int UV_CordY = VoxelData.UV_Cords[vertex * 2 + 1] + textureCoord.posY;
+                    int UV_CordX = VoxelData.UV_Cords[vertex * 2 + 0];
+                    int UV_CordY = VoxelData.UV_Cords[vertex * 2 + 1];
+
+                    v_PlaneUV.Add((byte)UV_CordX);
+                    v_PlaneUV.Add((byte)UV_CordY);
+
+                    UV_CordX += textureCoord.posX;
+                    UV_CordY += textureCoord.posY;
 
                     v_UV.Add((byte)UV_CordX);
                     v_UV.Add((byte)UV_CordY);
 
                     byte ambientOcclusion = GetAmbientOclussion(x, y, z, direction, vertex);
-                    vertexAO[vertex] = ambientOcclusion;    
-                    ambientOclussion.Add(ambientOcclusion);
+                    vertexAO[vertex] = ambientOcclusion;
 
                     v_Normals.Add((byte)direction);
 
                 }
+
+                int AOvalues;
+                AOvalues = vertexAO[0];
+                AOvalues += vertexAO[1] << 2;
+                AOvalues += vertexAO[2] << 4;
+                AOvalues += vertexAO[3] << 6;
+
+                for (int vertex = 0; vertex < 4; vertex++)
+                    v_ambientOclussion.Add((byte)AOvalues);
 
                 if (vertexAO[0] + vertexAO[3] > vertexAO[1] + vertexAO[2]) {
                     for (int triangle = 0; triangle < 6; triangle++)
@@ -142,8 +157,9 @@ namespace VoxelNow.Rendering.Fabrics {
             workingData = (SolidCunkFabricData)fabricData;
             v_Positions.Clear();
             v_UV.Clear();
+            v_PlaneUV.Clear();
             v_Normals.Clear();
-            ambientOclussion.Clear();
+            v_ambientOclussion.Clear();
             indices.Clear();
 
             for(int x = 0; x < ChunkGenerationConstants.voxelSizeX; x++) {
@@ -157,8 +173,9 @@ namespace VoxelNow.Rendering.Fabrics {
             SolidChunkMeshData solidChunkMeshData = new SolidChunkMeshData();
             solidChunkMeshData.v_Positions = v_Positions.ToArray();
             solidChunkMeshData.indices = indices.ToArray();
-            solidChunkMeshData.UVs = v_UV.ToArray();
-            solidChunkMeshData.v_AmbientOclusion = ambientOclussion.ToArray();
+            solidChunkMeshData.v_UV = v_UV.ToArray();
+            solidChunkMeshData.v_PlaneUV = v_PlaneUV.ToArray();
+            solidChunkMeshData.v_AmbientOclusion = v_ambientOclussion.ToArray();
             solidChunkMeshData.v_Normal = v_Normals.ToArray();
 
             return solidChunkMeshData;

@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Assets", "VoxelNow
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Core", "VoxelNow.Core\VoxelNow.Core.csproj", "{BDF6DB58-BF98-4E2B-9ED2-1D41CDBF0DE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelNow.API", "VoxelNow.API\VoxelNow.API.csproj", "{99913E62-D534-4D88-9894-1EBE31A31198}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.API", "VoxelNow.API\VoxelNow.API.csproj", "{99913E62-D534-4D88-9894-1EBE31A31198}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelNow.Networking", "VoxelNow.Networking\VoxelNow.Networking.csproj", "{DA8B08B5-A120-438D-8105-6B41F98C8D38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{99913E62-D534-4D88-9894-1EBE31A31198}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{99913E62-D534-4D88-9894-1EBE31A31198}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{99913E62-D534-4D88-9894-1EBE31A31198}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

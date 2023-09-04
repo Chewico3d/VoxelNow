@@ -1,4 +1,5 @@
 ﻿using System.Security.Cryptography;
+using VoxelNow.Core;
 using VoxelNow.Rendering.Materials;
 using VoxelNow.Rendering.Textures;
 using VoxelNow.Server;
@@ -31,7 +32,7 @@ namespace VoxelNow.Rendering
             floatingMaterial = new FloatingMaterial();
             solidChunkMaterial = new SolidChunkMaterial();
 
-            solidBlocksTexture = new TiledTexture("AssetPack/Textures/SolidBlocksTexture.png", 2, 2);
+            solidBlocksTexture = new TiledTexture(AssetLoader.GetAssetPath("Textures/SolidBlocksTexture.png"), 2, 2);
             solidChunkMaterial.BindBaseTexture(solidBlocksTexture);
 
             buildThread = new Thread(FabricBuildLoop);
@@ -76,6 +77,9 @@ namespace VoxelNow.Rendering
             objectsToBuild.Enqueue((objectID, fabricData));
 
             return objectID;
+        }
+        public void UpdateRenderObject(IFabricData fabricData, uint objectID) {
+            objectsToBuild.Enqueue((objectID, fabricData));
         }
         public void FabricBuildLoop() {
             while (true) {

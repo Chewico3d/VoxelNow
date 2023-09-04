@@ -6,8 +6,8 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\Textures\SolidBloc
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Assets.deps.json
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Assets.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Assets.pdb
-C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Core.dll
-C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Core.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.API.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\VoxelNow.Assets.csproj.AssemblyReference.cache
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\VoxelNow.Assets.GeneratedMSBuildEditorConfig.editorconfig
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\VoxelNow.Assets.AssemblyInfoInputs.cache

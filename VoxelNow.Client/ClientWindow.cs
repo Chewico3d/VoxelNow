@@ -44,10 +44,17 @@ namespace VoxelNow.Client {
                         int midY = y - 16;
                         int midZ = z - 16;
 
+
+                        int midY2 = y - 15;
+
                         int dist = midX * midX + midY * midY + midZ * midZ;
+                        int dist2 = midX * midX + midY2 * midY2 + midZ * midZ;
 
                         if (dist < 15 * 15)
-                            solidChunkData2.SetVoxel(x, y, z, 1);
+                            if(dist2 < 15 * 15)
+                                solidChunkData2.SetVoxel(x, y, z, 1);
+                            else
+                                solidChunkData2.SetVoxel(x, y, z, 2);
 
                     }
                 }

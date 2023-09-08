@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Core", "VoxelNow.C
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.API", "VoxelNow.API\VoxelNow.API.csproj", "{99913E62-D534-4D88-9894-1EBE31A31198}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelNow.Networking", "VoxelNow.Networking\VoxelNow.Networking.csproj", "{DA8B08B5-A120-438D-8105-6B41F98C8D38}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VoxelNow.Networking", "VoxelNow.Networking\VoxelNow.Networking.csproj", "{DA8B08B5-A120-438D-8105-6B41F98C8D38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VoxelNow.MapRenderer", "VoxelNow.MapRenderer\VoxelNow.MapRenderer.csproj", "{EB1115FD-CF3D-4CC5-9198-E064C1872038}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA8B08B5-A120-438D-8105-6B41F98C8D38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB1115FD-CF3D-4CC5-9198-E064C1872038}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB1115FD-CF3D-4CC5-9198-E064C1872038}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB1115FD-CF3D-4CC5-9198-E064C1872038}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB1115FD-CF3D-4CC5-9198-E064C1872038}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

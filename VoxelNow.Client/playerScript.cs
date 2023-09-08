@@ -25,31 +25,31 @@ namespace VoxelNow.Client {
             playerPitch += differenceY * 0.006f;
             playerYaw += differenceX * 0.006f;
 
-            float frontAxisZ = MathF.Cos(playerYaw);
-            float frontAxisX = MathF.Sin(playerYaw);
+            float frontAxisZ = MathF.Cos(playerYaw) * 20;
+            float frontAxisX = MathF.Sin(playerYaw) * 20;
 
             if (Program.nativeWindow.IsKeyDown(Keys.W)) {
-                playerZ += frontAxisZ * 0.016f;
-                playerX += frontAxisX * 0.016f;
+                playerZ += frontAxisZ * 0.036f;
+                playerX += frontAxisX * 0.036f;
             }
             if (Program.nativeWindow.IsKeyDown(Keys.S)) {
-                playerZ -= frontAxisZ * 0.016f;
-                playerX -= frontAxisX * 0.016f;
+                playerZ -= frontAxisZ * 0.036f;
+                playerX -= frontAxisX * 0.036f;
             }
 
             if (Program.nativeWindow.IsKeyDown(Keys.D)) {
-                playerX += frontAxisZ * 0.016f;
-                playerZ += frontAxisX * -0.016f;
+                playerX += frontAxisZ * 0.036f;
+                playerZ += frontAxisX * -0.036f;
             }
             if (Program.nativeWindow.IsKeyDown(Keys.A)) {
-                playerX -= frontAxisZ * 0.016f;
-                playerZ -= frontAxisX * -0.016f;
+                playerX -= frontAxisZ * 0.036f;
+                playerZ -= frontAxisX * -0.036f;
             }
             if (Program.nativeWindow.IsKeyDown(Keys.Space)) {
-                playerY += 0.03f;
+                playerY += 0.9f;
             }
             if (Program.nativeWindow.IsKeyDown(Keys.LeftShift)) {
-                playerY -= 0.03f;
+                playerY -= 0.9f;
             }
 
             Program.nativeWindow.MousePosition = new OpenTK.Mathematics.Vector2(1280 / 2, 720 / 2);

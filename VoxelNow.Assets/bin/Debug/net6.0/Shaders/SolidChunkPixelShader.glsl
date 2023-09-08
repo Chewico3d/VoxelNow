@@ -26,13 +26,12 @@ void main()
     float sunColision = dot(sunDir, normal);
     sunColision = clamp(sunColision, 0, 1);
     vec3 pixelWorldPosition = floor(worldPosition * 10) / 10 / 10;
-    //float stilAO = clamp(1 - AO * .5, .5, 1);
+    
 
-    //vec3 col = texture(baseTexture, UVcoords / vec2(textureSizeX, textureSizeY)).rgb * stilAO;
-    //col = clamp(pixelWorldPosition, 0, 1) * clamp(1 - AO * 0.4, 0, 1);
+    vec2 pixelatedPlaneUVcoord = floor (planeUV * 16) * 0.03125 * 2;
+    float AOvalue = GetAmbientOcclusionValue(pixelatedPlaneUVcoord.x,pixelatedPlaneUVcoord.y) * .5;
+    AOvalue = 1 - AOvalue * 0.7;
 
-    vec2 pixelatedPlaneUVcoord = floor (planeUV * 10) * 0.1;
-    float AOvalue = GetAmbientOcclusionValue(pixelatedPlaneUVcoord.x,pixelatedPlaneUVcoord.y);
-
-    FragColor = vec4(AOvalue);
+    vec3 col = texture(baseTexture, UVcoords / vec2(textureSizeX, textureSizeY)).rgb * AOvalue * (sunColision * .4 + .6);
+    FragColor = vec4(col, 1);
 } 

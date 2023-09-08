@@ -26,13 +26,13 @@ namespace VoxelNow.Rendering.Fabrics {
             ushort voxelID = workingData.GetVoxel(x, y, z);
             if (voxelID == 0)
                 return false;
-            return VoxelNowAssetsDatabase.voxelsData[voxelID].voxelType == VoxelType.SolidVoxel;
+            return AssetLoader.voxelsData[voxelID].voxelType == VoxelType.SolidVoxel;
 
         }
 
         TextureCoord getTextureCoord(ushort voxelID, int direction) {
-            if(VoxelNowAssetsDatabase.voxelsData[voxelID].renderingFaceMode == VoxelRenderingFaceMode.Static)
-                return VoxelNowAssetsDatabase.voxelsData[voxelID].textureCoordsFaces[direction];
+            if(AssetLoader.voxelsData[voxelID].renderingFaceMode == VoxelRenderingFaceMode.Static)
+                return AssetLoader.voxelsData[voxelID].textureCoordsFaces[direction];
             return new TextureCoord(255,255);
         }
 
@@ -162,9 +162,9 @@ namespace VoxelNow.Rendering.Fabrics {
             v_ambientOclussion.Clear();
             indices.Clear();
 
-            for(int x = 0; x < ChunkGenerationConstants.voxelSizeX; x++) {
-                for(int y = 0; y < ChunkGenerationConstants.voxelSizeY; y++) {
-                    for(int z = 0; z < ChunkGenerationConstants.voxelSizeZ; z++) {
+            for(int x = 0; x < GenerationConstants.voxelSizeX; x++) {
+                for(int y = 0; y < GenerationConstants.voxelSizeY; y++) {
+                    for(int z = 0; z < GenerationConstants.voxelSizeZ; z++) {
                         ProcessVoxel(x, y, z);
                     }
                 }

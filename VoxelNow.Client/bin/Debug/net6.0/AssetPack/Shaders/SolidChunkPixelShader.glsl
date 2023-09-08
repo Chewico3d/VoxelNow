@@ -29,8 +29,9 @@ void main()
     
 
     vec2 pixelatedPlaneUVcoord = floor (planeUV * 16) * 0.03125 * 2;
-    float AOvalue = 1 - GetAmbientOcclusionValue(pixelatedPlaneUVcoord.x,pixelatedPlaneUVcoord.y) * 0.4;
+    float AOvalue = GetAmbientOcclusionValue(pixelatedPlaneUVcoord.x,pixelatedPlaneUVcoord.y) * .5;
+    AOvalue = 1 - AOvalue * 0.7;
 
-    vec3 col = texture(baseTexture, UVcoords / vec2(textureSizeX, textureSizeY)).rgb * AOvalue * sunColision;
+    vec3 col = texture(baseTexture, UVcoords / vec2(textureSizeX, textureSizeY)).rgb * AOvalue * (sunColision * .4 + .6);
     FragColor = vec4(col, 1);
 } 

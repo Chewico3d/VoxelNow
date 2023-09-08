@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoxelNow.API;
 
 namespace VoxelNow.Core {
     public class ChunkDatabase {
 
         public readonly int sizeX, sizeY, sizeZ;
         public readonly Chunk[] chunks;
+        public MapArray2D<int> terrainHeight { get; internal set; }
 
         public ChunkDatabase(int sizeX, int sizeY, int sizeZ) {
             this.sizeX = sizeX;
@@ -16,24 +18,65 @@ namespace VoxelNow.Core {
             this.sizeZ = sizeZ;
 
             chunks = new Chunk[sizeX * sizeY * sizeZ];
-            int itirenation = 0;
-            for(int x = 0; x < sizeX; x++) {
-                for(int y = 0; y < sizeY; y++)
-                    for(int z = 0; z < sizeZ; z++) {
+        }
 
-                        chunks[itirenation++] = new Chunk(x, y, z);
-                        itirenation++;
+        public void GenerateTerrain() {
+
+            for (int z = 0; z < sizeZ; z++) {
+                for (int y = 0; y < sizeY; y++)
+                    for (int x = 0; x < sizeX; x++) {
+
+                        chunks[GetChunkID(x, y, z)] = new Chunk(x, y, z);
 
                     }
             }
 
+            TerrainGenerator.GenerateTerrain(this);
+
         }
 
-        void SetVoxelID(int x, int y, int z, ushort value) {
+        public void GenerateHeightMap() {
+            TerrainGenerator.GenerateHeight(this);
+        }
+
+        //Complete means that the chunk have borders : 32 + 3, 32 + 2, 32 + 2
+        public ushort[] GetCompleteChunkVoxelsData(int chunkID) {
+
+            int completeVoxelsAmount = (GenerationConstants.voxelSizeX + 2) 
+                * (GenerationConstants.voxelSizeY + 2) * (GenerationConstants.voxelSizeZ + 2);
+            ushort[] data = new ushort[completeVoxelsAmount];
+
+            for(int z = 0; z < GenerationConstants.voxelSizeZ + 2; z++) {
+                for (int y = 0; y < GenerationConstants.voxelSizeY + 2; y++) {
+                    for (int x = 0; x < GenerationConstants.voxelSizeX + 2; x++) {
+
+                        int voxelPositionX = x - 1 + chunks[chunkID].IDx * GenerationConstants.voxelSizeX;
+                        int voxelPositionY = y - 1 + chunks[chunkID].IDy * GenerationConstants.voxelSizeY;
+                        int voxelPositionZ = z - 1 + chunks[chunkID].IDz * GenerationConstants.voxelSizeZ;
+
+                        if (voxelPositionX < 0 || voxelPositionY < 0 || voxelPositionZ < 0) continue;
+                        if (voxelPositionX >= sizeX * GenerationConstants.voxelSizeX) continue;
+                        if (voxelPositionY >= sizeY * GenerationConstants.voxelSizeY) continue;
+                        if (voxelPositionZ >= sizeZ * GenerationConstants.voxelSizeZ) continue;
+
+                        int ID = x + y * (GenerationConstants.voxelSizeX + 2)
+                            + z * (GenerationConstants.voxelSizeX + 2) * (GenerationConstants.voxelSizeY + 2);
+
+                        data[ID] = GetVoxel(voxelPositionX, voxelPositionY, voxelPositionZ);
+
+                    }
+                }
+            }
+
+            return data;
+
+        }
+
+        internal void SetVoxel(int x, int y, int z, ushort value) {
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
             chunks[voxelPos.Item1].voxels[voxelPos.Item2] = value;
         }
-        ushort GetVoxelID(int x, int y, int z) {
+        ushort GetVoxel(int x, int y, int z) {
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
             return chunks[voxelPos.Item1].voxels[voxelPos.Item2];
         }
@@ -48,22 +91,28 @@ namespace VoxelNow.Core {
 
 
         (int, int) GetVoxelCordinates(int x, int y, int z) {
-            int chunkX = (int)MathF.Floor((float)x / ChunkGenerationConstants.voxelSizeX);
-            int chunkY = (int)MathF.Floor((float)y / ChunkGenerationConstants.voxelSizeY);
-            int chunkZ = (int)MathF.Floor((float)z / ChunkGenerationConstants.voxelSizeZ);
+            int chunkX = (int)MathF.Floor((float)x / (float)GenerationConstants.voxelSizeX);
+            int chunkY = (int)MathF.Floor((float)y / (float)GenerationConstants.voxelSizeY);
+            int chunkZ = (int)MathF.Floor((float)z / (float)GenerationConstants.voxelSizeZ);
 
-            int relativeX = x - chunkX * ChunkGenerationConstants.voxelSizeX;
-            int relativeY = y - chunkX * ChunkGenerationConstants.voxelSizeY;
-            int relativeZ = z - chunkX * ChunkGenerationConstants.voxelSizeZ;
+            int relativeX = x - chunkX * GenerationConstants.voxelSizeX;
+            int relativeY = y - chunkY * GenerationConstants.voxelSizeY;
+            int relativeZ = z - chunkZ * GenerationConstants.voxelSizeZ;
 
             int chunkID = chunkX + chunkY * sizeX + chunkZ * sizeX * sizeY;
-            int voxelID = relativeX + relativeY * ChunkGenerationConstants.voxelSizeX
-                + relativeZ * ChunkGenerationConstants.voxelSizeX * ChunkGenerationConstants.voxelSizeZ;
+            int voxelID = relativeX + relativeY * GenerationConstants.voxelSizeX
+                + relativeZ * GenerationConstants.voxelSizeX * GenerationConstants.voxelSizeY;
+
+            if (voxelID < 0)
+                return (chunkID, voxelID);
 
             return (chunkID, voxelID);
 
         }
 
+        int GetChunkID(int x, int y, int z) {
+            return x + y * sizeX + z * sizeX * sizeY;
+        }
 
         static (short, short, short, short) GetFromVoxelColor(ushort value) {
             short sun = (short)(value & 0b_1111);

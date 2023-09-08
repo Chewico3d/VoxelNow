@@ -1,0 +1,12 @@
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Shaders\MapPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Shaders\MapVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Shaders\SolidChunkPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Shaders\FloatingPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Shaders\SolidChunkVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Shaders\FloatingVertexShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\Textures\SolidBlocksTexture.png
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\VoxelNow.Assets.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\VoxelNow.Assets.deps.json
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\VoxelNow.Assets.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.MapRenderer\bin\net6.0\debug\AssetPack\VoxelNow.API.pdb

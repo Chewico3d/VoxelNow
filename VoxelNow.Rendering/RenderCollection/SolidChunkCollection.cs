@@ -25,13 +25,16 @@ namespace VoxelNow.Rendering.RenderCollection {
         public void Draw(Camera camera, Shader shader) {
             shader.Use();
             camera.CalculateCameraMatrix();
+            int drawed = 0;
             for (int x = 0; x < renderObjects.Count; x++) {
                 (float, float, float) position = renderObjectsPositions[x];
                 Matrix4 matrix = camera.GetMatrixForObject(position.Item1, position.Item2, position.Item3);
                 shader.SetTransformationMatrix(matrix);
 
                 IRenderObject currentRendrerObject = renderObjects[x];
-                currentRendrerObject.Draw();
+                if (currentRendrerObject.Draw())
+                    drawed++;
+                
 
             }
 

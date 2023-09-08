@@ -10,8 +10,8 @@ namespace VoxelNow.Core {
         public ushort[] lightValue;//rrrrggggbbbbssss
 
         public Chunk(int IDx, int IDy, int IDz) {
-            int voxelCount = ChunkGenerationConstants.voxelSizeX * ChunkGenerationConstants.voxelSizeY
-                * ChunkGenerationConstants.voxelSizeZ;
+            int voxelCount = GenerationConstants.voxelSizeX * GenerationConstants.voxelSizeY
+                * GenerationConstants.voxelSizeZ;
             voxels = new ushort[voxelCount];
             voxelsState = new byte[voxelCount];
             lightValue = new ushort[voxelCount];
@@ -23,8 +23,8 @@ namespace VoxelNow.Core {
         }
 
         public int GetChunkID(int x, int y, int z) {
-            return x + y * ChunkGenerationConstants.voxelSizeX
-                + z * ChunkGenerationConstants.voxelSizeX * ChunkGenerationConstants.voxelSizeY;
+            return x + y * GenerationConstants.voxelSizeX
+                + z * GenerationConstants.voxelSizeX * GenerationConstants.voxelSizeY;
         }
 
 

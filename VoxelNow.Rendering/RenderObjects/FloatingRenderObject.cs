@@ -14,10 +14,12 @@ namespace VoxelNow.Rendering.RenderObjects {
 
         int triangleCount;
 
-        public void Draw() {
+        public bool Draw() {
+            if (!build)
+                return false;
             GL.BindVertexArray(VAO);
             GL.DrawElements(PrimitiveType.Triangles, triangleCount, DrawElementsType.UnsignedInt, 0);
-
+            return true;
         }
 
         public void LoadData(IMeshData meshData) {

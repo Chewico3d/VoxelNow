@@ -10,7 +10,7 @@ namespace VoxelNow.Server {
         public ushort renderObjectID { get; }
 
         public void LoadData(IMeshData meshData);
-        public void Draw();
+        public bool Draw();
 
     }
 }

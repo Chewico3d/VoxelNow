@@ -38,7 +38,7 @@ namespace VoxelNow.Rendering
             }
 
             //Only for debug
-#if DEBUG
+#if false
             for (int x = 0; x < fabrics.Length; x++)
             {
                 if (fabrics[x] == null)

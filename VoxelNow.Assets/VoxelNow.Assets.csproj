@@ -9,12 +9,20 @@
   <ItemGroup>
     <None Remove="Shaders\FloatingPixelShader.glsl" />
     <None Remove="Shaders\FloatingVertexShader.glsl" />
+    <None Remove="Shaders\MapPixelShader.glsl" />
+    <None Remove="Shaders\MapVertexShader.glsl" />
     <None Remove="Shaders\SolidChunkPixelShader.glsl" />
     <None Remove="Shaders\SolidChunkVertexShader.glsl" />
     <None Remove="Textures\SolidBlocksTexture.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Shaders\MapPixelShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shaders\MapVertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Shaders\SolidChunkPixelShader.glsl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

@@ -30,7 +30,7 @@ namespace VoxelNow.Server {
         }
 
         public Matrix4 GetMatrixForObject(float objX, float objY, float objZ) {
-            Matrix4 objectTranslation = Matrix4.CreateTranslation(objX, objY, objZ);
+            Matrix4 objectTranslation = Matrix4.CreateTranslation(objX, objY, -objZ);
             Matrix4 invertZ = Matrix4.CreateScale(1, 1, -1);
 
             return invertZ * objectTranslation * cameraMatrix;

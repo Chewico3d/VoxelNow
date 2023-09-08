@@ -18,3 +18,5 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\VoxelNow.Assets.dl
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\refint\VoxelNow.Assets.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\VoxelNow.Assets.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Debug\net6.0\ref\VoxelNow.Assets.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\Shaders\MapPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\Shaders\MapVertexShader.glsl

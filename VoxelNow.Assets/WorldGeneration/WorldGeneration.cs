@@ -4,43 +4,74 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoxelNow.API;
-using VoxelNow.API.Noise;
+using VoxelNow.API.TerrainTools;
 
 namespace VoxelNow.Assets.WorldGeneration
 {
     public class WorldGeneration : IWorldGenerator {
-        FastNoise fn;
 
+        CurveModifier curveModifier;
         PerlinNoiseMap2D noiseMap;
-        public MapArray2D<int> GenerateHeightMap(int voxelsX, int voxelsZ) {
+        float SmothValue(float value) {
 
-            MapArray2D<int> heightMap = new MapArray2D<int>(voxelsX, voxelsZ);
-            noiseMap = new PerlinNoiseMap2D(voxelsX, voxelsZ, 200);
-            for(int x = 0; x < voxelsX; x++) {
-                for(int z = 0; z < voxelsZ; z++) {
-                    float midX = x -voxelsX / 2;
-                    float midY = z - voxelsZ / 2;
+            return -(MathF.Cos(MathF.PI * value) - 1) / 2;
+        }
 
-                    float DistanceToCenter = 1 - MathF.Pow(midX * midX * midX * midX + midY * midY * midY * midY, 0.25f) / (32 * 10);
-                    DistanceToCenter = Math.Clamp(DistanceToCenter, 0, 1);
+        public MapArray3D<ushort> GenerateTerrain(int sizeX, int sizeY, int sizeZ, uint ID) {
+            curveModifier = new CurveModifier();
 
-                    int initialHeight = (int)((fn.GetNoise((float)x / 2, (float)z / 2) * 100 + 100) * DistanceToCenter);
+            curveModifier.AddModifier(new Modifier(0, 60));
+            curveModifier.AddModifier(new Modifier(0.1f, 120));
+            curveModifier.AddModifier(new Modifier(0.2f, 135));
+            curveModifier.AddModifier(new Modifier(1, 300));
+            MapArray3D<ushort> terrain = new MapArray3D<ushort>(sizeX, sizeY, sizeZ);
 
-                    initialHeight += (int)((fn.GetNoise(x + 100, z - 322) * 30) * DistanceToCenter);
-                    //heightMap.SetValue(x, z, initialHeight);
-                    heightMap.SetValue(x, z, (int)(noiseMap.GetValue(x, z) * 300 + 100));
+            noiseMap = new PerlinNoiseMap2D(sizeX, sizeZ, 150);
+            for (int x = 0; x < sizeX; x++) {
+                for (int z = 0; z < sizeZ; z++) {
+                    float midX = x - sizeX / 2;
+                    float midZ = z - sizeZ / 2;
+
+                    float distanceToEndX = (MathF.Abs(midX)) / sizeX * 2;
+                    distanceToEndX = (distanceToEndX < 0) ? 0 : (distanceToEndX > 1) ? 1 : distanceToEndX;
+
+                    float distanceToEndZ = (MathF.Abs(midZ)) / sizeZ * 2;
+                    distanceToEndZ = (distanceToEndZ < 0) ? 0 : (distanceToEndZ > 1) ? 1 : distanceToEndZ;
+
+                    float DistanceToCenter = MathF.Sqrt(distanceToEndX * distanceToEndX + distanceToEndZ * distanceToEndZ);
+                    DistanceToCenter = (DistanceToCenter > 1) ? 1 : DistanceToCenter;
+                    DistanceToCenter = 1 - DistanceToCenter;
+                    
+                    DistanceToCenter = SmothValue(DistanceToCenter);
+
+                    float height = (noiseMap.GetValue(x, z) * 0.5f + 0.5f) * DistanceToCenter ;
+                    //height *= DistanceToCenter;
+
+                    height = curveModifier.GetSmothPoint(height);
+
+
+                    int initialHeight = (int)(height);
+                    initialHeight = (initialHeight < 0) ? 1 : (initialHeight >= sizeY) ? sizeY - 1 : initialHeight;
+                    //initialHeight = (int)(DistanceToCenter * 100);
+
+                    for (int y = 0; y < initialHeight; y++) {
+                        if (y < 125)
+                            terrain.SetValue(x, y, z, 2);
+                        else {
+                            if(y + 1 >= initialHeight)
+                                terrain.SetValue(x, y, z, 4);
+                            else
+                                terrain.SetValue(x, y, z, 3);
+                        }
+
+                    }
                 }
 
             }
 
-            return heightMap;
+            return terrain;
 
         }
 
-
-        public void SetSeed(int seedNumber) {
-            fn = new FastNoise(seedNumber);
-
-        }
     }
 }

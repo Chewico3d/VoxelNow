@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 namespace VoxelNow.API {
     public class MapArray2D<T> {
 
-        int sizeX, sizeY;
-        public T[] array;
+        public readonly int sizeX, sizeY;
+        public readonly T[] array;
 
         public MapArray2D(int sizeX, int sizeY) {
             this.sizeX = sizeX;

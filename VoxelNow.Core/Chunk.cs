@@ -4,10 +4,12 @@ using System.Linq.Expressions;
 namespace VoxelNow.Core {
     public class Chunk {
         public readonly int IDx, IDy, IDz;
+        public readonly int worldOffsetX, worldOffsetY, worldOffsetZ;
 
         public ushort[] voxels;
         public byte[] voxelsState;
         public ushort[] lightValue;//rrrrggggbbbbssss
+
 
         public Chunk(int IDx, int IDy, int IDz) {
             int voxelCount = GenerationConstants.voxelSizeX * GenerationConstants.voxelSizeY
@@ -19,6 +21,10 @@ namespace VoxelNow.Core {
             this.IDx = IDx;
             this.IDy = IDy;
             this.IDz = IDz;
+
+            this.worldOffsetX = IDx * GenerationConstants.voxelSizeX;
+            this.worldOffsetY = IDy * GenerationConstants.voxelSizeY;
+            this.worldOffsetZ = IDz * GenerationConstants.voxelSizeZ;
 
         }
 

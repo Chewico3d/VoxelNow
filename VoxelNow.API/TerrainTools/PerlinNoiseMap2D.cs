@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoxelNow.API.Noise
+namespace VoxelNow.API.TerrainTools
 {
     public class PerlinNoiseMap2D
     {
 
-        Random random = new Random();
+        Random random = new Random(0);
 
         int voxelSizeX, voxelSizeY;
         int samplesInX;
@@ -19,7 +19,8 @@ namespace VoxelNow.API.Noise
 
         readonly MapArray2D<(float, float)> gridVectors;
 
-        public PerlinNoiseMap2D(int voxelSizeX, int voxelSizeY, int sampleSeparation) {
+        public PerlinNoiseMap2D(int voxelSizeX, int voxelSizeY, int sampleSeparation)
+        {
             this.voxelSizeX = voxelSizeX;
             this.voxelSizeY = voxelSizeY;
 
@@ -35,17 +36,20 @@ namespace VoxelNow.API.Noise
         }
 
 
-        void GenerateVectors() {
+        void GenerateVectors()
+        {
 
-            for(int x = 0; x < samplesInX + 1; x++) {
-                for(int y = 0; y < samplesInY + 1; y++) {
+            for (int x = 0; x < samplesInX + 1; x++)
+            {
+                for (int y = 0; y < samplesInY + 1; y++)
+                {
 
                     float vectorX = random.NextSingle() * 2 - 1;
                     float vectorY = random.NextSingle() * 2 - 1;
 
                     float magnitude = MathF.Sqrt(vectorX * vectorX + vectorY * vectorY);
 
-                    gridVectors.SetValue(x, y, (vectorX, vectorY));
+                    gridVectors.SetValue(x, y, (vectorX , vectorY ));
 
                 }
             }
@@ -58,37 +62,38 @@ namespace VoxelNow.API.Noise
         0------1
          */
 
-        float SmothValue(float value) {
+        float SmothValue(float value)
+        {
 
             return -(MathF.Cos(MathF.PI * value) - 1) / 2;
         }
 
-        public float GetValue(float xPos, float yPos) {
+        public float GetValue(float xPos, float yPos)
+        {
 
-            float relativeX = xPos / (float)sampleSeparation;
-            float relativeY = yPos / (float)sampleSeparation;
-
+            float relativeX = xPos / sampleSeparation;
+            float relativeY = yPos / sampleSeparation;
             int IDPosX = (int)MathF.Floor(relativeX);
             int IDPosY = (int)MathF.Floor(relativeY);
 
-            IDPosX = (IDPosX < 0) ? 0 : (IDPosX >= samplesInX) ? samplesInX - 1 : IDPosX;
-            IDPosY = (IDPosY < 0) ? 0 : (IDPosY >= samplesInY) ? samplesInY - 1 : IDPosY;
+            IDPosX = IDPosX < 0 ? 0 : IDPosX >= samplesInX - 1 ? samplesInX - 2 : IDPosX;
+            IDPosY = IDPosY < 0 ? 0 : IDPosY >= samplesInY - 1 ? samplesInY - 2 : IDPosY;
 
             (float, float) vector0 = gridVectors.GetValue(IDPosX, IDPosY);
             (float, float) vector1 = gridVectors.GetValue(IDPosX + 1, IDPosY);
             (float, float) vector2 = gridVectors.GetValue(IDPosX, IDPosY + 1);
             (float, float) vector3 = gridVectors.GetValue(IDPosX + 1, IDPosY + 1);
 
-            float localX = relativeX - IDPosX;
-            float localY = relativeY - IDPosY;
+            float localX = SmothValue(relativeX - IDPosX);
+            float localY = SmothValue(relativeY - IDPosY);
 
-            float vertexValue0 = vector0.Item1 * (localX) + vector0.Item2 * (localY);
-            float vertexValue1 = vector1.Item1 * (localX - 1) + vector1.Item2 * (localY);
-            float vertexValue2 = vector2.Item1 * (localX) + vector2.Item2 * (localY - 1);
+            float vertexValue0 = vector0.Item1 * localX + vector0.Item2 * localY;
+            float vertexValue1 = vector1.Item1 * (localX - 1) + vector1.Item2 * localY;
+            float vertexValue2 = vector2.Item1 * localX + vector2.Item2 * (localY - 1);
             float vertexValue3 = vector3.Item1 * (localX - 1) + vector3.Item2 * (localY - 1);
 
-            float valueDownX = vertexValue0 * (1 - localX) + vertexValue1 * (localX);
-            float valueUpX = vertexValue2 * (1 - localX) + vertexValue3 * (localX);
+            float valueDownX = vertexValue0 * (1 - localX) + vertexValue1 * localX;
+            float valueUpX = vertexValue2 * (1 - localX) + vertexValue3 * localX;
 
             return valueUpX * localY + valueDownX * (1 - localY);
 

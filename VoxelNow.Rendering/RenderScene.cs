@@ -37,7 +37,7 @@ namespace VoxelNow.Rendering
             solidChunkMaterial = new SolidChunkMaterial();
             mapMaterial = new MapMaterial();
 
-            solidBlocksTexture = new TiledTexture(AssetLoader.GetAssetPath("Textures/SolidBlocksTexture.png"), 2, 2);
+            solidBlocksTexture = new TiledTexture(AssetLoader.GetAssetPath("Textures/SolidBlocksTexture.png"), 20, 20);
             solidChunkMaterial.BindBaseTexture(solidBlocksTexture);
 
             buildThread = new Thread(FabricBuildLoop);

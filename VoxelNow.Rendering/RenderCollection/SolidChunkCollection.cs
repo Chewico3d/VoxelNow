@@ -28,6 +28,17 @@ namespace VoxelNow.Rendering.RenderCollection {
             int drawed = 0;
             for (int x = 0; x < renderObjects.Count; x++) {
                 (float, float, float) position = renderObjectsPositions[x];
+
+                float distanceToCameraX = position.Item1 - camera.xPos;
+                float distanceToCameraY = position.Item2 - camera.yPos;
+                float distanceToCameraZ = position.Item3 - camera.zPos;
+
+                float distanceToCamera = distanceToCameraX * distanceToCameraX + distanceToCameraY * distanceToCameraY + distanceToCameraZ * distanceToCameraZ;
+
+                if (distanceToCamera > 600 * 600)
+                    continue;
+
+
                 Matrix4 matrix = camera.GetMatrixForObject(position.Item1, position.Item2, position.Item3);
                 shader.SetTransformationMatrix(matrix);
 

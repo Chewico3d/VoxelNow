@@ -11,6 +11,7 @@ namespace VoxelNow.Server {
 
         public float aspectRatio = 16f / 9;
 
+        public float flatDirX, flatDirZ;
         Matrix4 cameraMatrix;
 
         public void SetPosition(float x, float y, float z) {
@@ -26,6 +27,10 @@ namespace VoxelNow.Server {
             Matrix4 cameraRotationX = Matrix4.CreateRotationX(pitch);
 
             cameraMatrix = cameraPosition * cameraRotationZ * cameraRotationY * cameraRotationX * projection;
+
+            flatDirX = MathF.Sin(yaw);
+            flatDirZ = MathF.Cos(yaw);
+
 
         }
 

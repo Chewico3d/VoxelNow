@@ -10,7 +10,6 @@ namespace VoxelNow.Core {
 
         public readonly int sizeX, sizeY, sizeZ;
         public readonly Chunk[] chunks;
-        public MapArray2D<int> terrainHeight { get; internal set; }
 
         public ChunkDatabase(int sizeX, int sizeY, int sizeZ) {
             this.sizeX = sizeX;
@@ -22,21 +21,41 @@ namespace VoxelNow.Core {
 
         public void GenerateTerrain() {
 
+            MapArray3D<ushort> completeTerrain = AssetLoader.worldGenerator.GenerateTerrain(
+                sizeX * GenerationConstants.voxelSizeX,
+                sizeY * GenerationConstants.voxelSizeY,
+                sizeZ * GenerationConstants.voxelSizeZ, 0);
+
+            void ChunkLoadData(Chunk workingChunk) {
+
+                int voxelID = 0;
+
+                int offsetX = workingChunk.IDx * GenerationConstants.voxelSizeX;
+                int offsetY = workingChunk.IDy * GenerationConstants.voxelSizeY;
+                int offsetZ = workingChunk.IDz * GenerationConstants.voxelSizeZ;
+
+                for(int z = 0; z < GenerationConstants.voxelSizeZ; z++) {
+                    for(int y = 0; y < GenerationConstants.voxelSizeY; y++)
+                        for(int x = 0; x < GenerationConstants.voxelSizeX; x++) {
+
+                            workingChunk.voxels[voxelID] = completeTerrain
+                                .GetValue(x + offsetX, y + offsetY, z + offsetZ);
+
+                            voxelID++;
+                        }
+                }
+            }
+
+            int chunkID = 0;
             for (int z = 0; z < sizeZ; z++) {
                 for (int y = 0; y < sizeY; y++)
                     for (int x = 0; x < sizeX; x++) {
 
-                        chunks[GetChunkID(x, y, z)] = new Chunk(x, y, z);
-
+                        chunks[chunkID] = new Chunk(x, y, z);
+                        ChunkLoadData(chunks[chunkID]);
+                        chunkID++;
                     }
             }
-
-            TerrainGenerator.GenerateTerrain(this);
-
-        }
-
-        public void GenerateHeightMap() {
-            TerrainGenerator.GenerateHeight(this);
         }
 
         //Complete means that the chunk have borders : 32 + 3, 32 + 2, 32 + 2
@@ -76,7 +95,19 @@ namespace VoxelNow.Core {
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
             chunks[voxelPos.Item1].voxels[voxelPos.Item2] = value;
         }
-        ushort GetVoxel(int x, int y, int z) {
+        public ushort GetVoxel(int x, int y, int z) {
+
+
+            if (x < 0 || z < 0)
+                return 0;
+
+            if (y <= 0)
+                return 1;
+
+            if (x >= sizeX * GenerationConstants.voxelSizeX|| y >= sizeY * GenerationConstants.voxelSizeY
+                || z >= sizeZ * GenerationConstants.voxelSizeZ)
+                return 0;
+
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
             return chunks[voxelPos.Item1].voxels[voxelPos.Item2];
         }
@@ -91,6 +122,8 @@ namespace VoxelNow.Core {
 
 
         (int, int) GetVoxelCordinates(int x, int y, int z) {
+
+
             int chunkX = (int)MathF.Floor((float)x / (float)GenerationConstants.voxelSizeX);
             int chunkY = (int)MathF.Floor((float)y / (float)GenerationConstants.voxelSizeY);
             int chunkZ = (int)MathF.Floor((float)z / (float)GenerationConstants.voxelSizeZ);

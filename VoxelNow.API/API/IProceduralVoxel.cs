@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VoxelNow.Core;
 
 namespace VoxelNow.API.API
 {
@@ -10,7 +11,7 @@ namespace VoxelNow.API.API
     {
         public ushort ID { get; }
 
-        //public 
+        public void GenerateAt(int x, int y, int z, ChunkDatabase chunkDatabase);
 
     }
 }

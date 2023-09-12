@@ -34,9 +34,7 @@ namespace VoxelNow.Client {
 
                 Chunk workingChunk = chunkDatabase.chunks[x];
 
-                SolidCunkFabricData solidCunkFabricData = new SolidCunkFabricData();
-                solidCunkFabricData.voxelData = (int x, int y, int z) => chunkDatabase.GetVoxel(
-                    x + workingChunk.worldOffsetX, y + workingChunk.worldOffsetY, z + workingChunk.worldOffsetZ);
+                SolidCunkFabricData solidCunkFabricData = new SolidCunkFabricData(chunkDatabase, workingChunk.IDx, workingChunk.IDy, workingChunk.IDz);
 
                 uint ID = renderScene.GenerateRenderObject(solidCunkFabricData);
                 renderScene.SetObjectPosition(ID,

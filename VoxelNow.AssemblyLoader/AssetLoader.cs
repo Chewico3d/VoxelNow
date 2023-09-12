@@ -6,6 +6,7 @@ namespace VoxelNow.AssemblyLoader {
 
         public static string assetPath = "AssetPack";
         public static IVoxelData[] voxelsData;
+        public static IProceduralVoxel[] proceduralVoxels;
         public static IWorldGenerator worldGenerator;
 
         public static string GetAssetPath(string internalPath) => Path.Combine(assetPath, internalPath);
@@ -14,6 +15,7 @@ namespace VoxelNow.AssemblyLoader {
         public static void LoadAssemblyData() {
             string[] assembliesPath = Directory.GetFiles(GetAssetPath(), "*.dll");
             voxelsData = new IVoxelData[1024];
+            proceduralVoxels = new IProceduralVoxel[1024];
 
             for (int it = 0; it < assembliesPath.Length; it++) {
                 assembliesPath[it] = Path.GetFullPath(assembliesPath[it]);

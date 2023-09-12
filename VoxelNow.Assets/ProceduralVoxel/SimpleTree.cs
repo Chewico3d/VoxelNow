@@ -5,7 +5,9 @@ namespace VoxelNow.Assets.ProceduralVoxel {
         public ushort ID { get { return 0x00; } }
 
         public void GenerateAt(int x, int y, int z, IChunkDatabase chunkDatabase) {
-            throw new NotImplementedException();
+            chunkDatabase.SetVoxel(x, y, z, 1);
+            chunkDatabase.SetVoxel(x, y + 1, z, 1);
+            chunkDatabase.SetVoxel(x, y + 2, z, 1);
         }
     }
 }

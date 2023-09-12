@@ -8,8 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "VoxelNow.Assets/1.0.0": {
         "dependencies": {
-          "VoxelNow.API": "1.0.0",
-          "VoxelNow.Core": "1.0.0"
+          "VoxelNow.API": "1.0.0"
         },
         "runtime": {
           "VoxelNow.Assets.dll": {}

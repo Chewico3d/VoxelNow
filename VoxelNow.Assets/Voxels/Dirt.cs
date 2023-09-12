@@ -16,5 +16,8 @@ namespace VoxelNow.Assets.Voxels
             new TextureCoord(2,0),
             new TextureCoord(2,0)
         };
+
+        public bool isProcedural { get { return false; } }
+        public ushort proceduralObjectReference => throw new NotImplementedException();
     }
 }

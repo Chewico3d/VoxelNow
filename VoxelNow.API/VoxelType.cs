@@ -5,9 +5,10 @@
     public enum VoxelType
     {
 
-        SolidVoxel = 0,
-        TransparentVoxel = 1,
-        CustomAsset = 2,
-        Rail = 3
+        NotRender = 0,
+        SolidVoxel = 1,
+        TransparentVoxel = 2,
+        CustomAsset = 3,
+        Rail = 4
     }
 }

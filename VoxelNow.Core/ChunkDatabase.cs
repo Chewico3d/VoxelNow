@@ -5,6 +5,10 @@ namespace VoxelNow.Core {
     public class ChunkDatabase : IChunkDatabase{
 
         public readonly int sizeX, sizeY, sizeZ;
+        public int voxelSizeX { get { return sizeX * GenerationConstants.voxelSizeX; } }
+        public int voxelSizeY { get { return sizeY * GenerationConstants.voxelSizeY; } }
+        public int voxelSizeZ { get { return sizeZ * GenerationConstants.voxelSizeZ; } }
+
         public readonly Chunk[] chunks;
 
         public ChunkDatabase(int sizeX, int sizeY, int sizeZ) {
@@ -13,45 +17,18 @@ namespace VoxelNow.Core {
             this.sizeZ = sizeZ;
 
             chunks = new Chunk[sizeX * sizeY * sizeZ];
+            for (int z = 0; z < sizeZ; z++) {
+                for (int y = 0; y < sizeY; y++)
+                    for (int x = 0; x < sizeX; x++) { 
+                        chunks[GetChunkID(x,y,z)] = new Chunk(x, y, z);
+                    }
+            }
         }
 
         public void GenerateTerrain() {
 
-            MapArray3D<ushort> completeTerrain = AssetLoader.worldGenerator.GenerateTerrain(
-                sizeX * GenerationConstants.voxelSizeX,
-                sizeY * GenerationConstants.voxelSizeY,
-                sizeZ * GenerationConstants.voxelSizeZ, 0);
+            AssetLoader.worldGenerator.GenerateTerrain(this, 0);
 
-            void ChunkLoadData(Chunk workingChunk) {
-
-                int voxelID = 0;
-
-                int offsetX = workingChunk.IDx * GenerationConstants.voxelSizeX;
-                int offsetY = workingChunk.IDy * GenerationConstants.voxelSizeY;
-                int offsetZ = workingChunk.IDz * GenerationConstants.voxelSizeZ;
-
-                for (int z = 0; z < GenerationConstants.voxelSizeZ; z++) {
-                    for (int y = 0; y < GenerationConstants.voxelSizeY; y++)
-                        for (int x = 0; x < GenerationConstants.voxelSizeX; x++) {
-
-                            workingChunk.voxels[voxelID] = completeTerrain
-                                .GetValue(x + offsetX, y + offsetY, z + offsetZ);
-
-                            voxelID++;
-                        }
-                }
-            }
-
-            int chunkID = 0;
-            for (int z = 0; z < sizeZ; z++) {
-                for (int y = 0; y < sizeY; y++)
-                    for (int x = 0; x < sizeX; x++) {
-
-                        chunks[chunkID] = new Chunk(x, y, z);
-                        ChunkLoadData(chunks[chunkID]);
-                        chunkID++;
-                    }
-            }
         }
 
         //Complete means that the chunk have borders : 32 + 3, 32 + 2, 32 + 2
@@ -87,7 +64,7 @@ namespace VoxelNow.Core {
 
         }
 
-        internal void SetVoxel(int x, int y, int z, ushort value) {
+        public void SetVoxel(int x, int y, int z, ushort value) {
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
             chunks[voxelPos.Item1].voxels[voxelPos.Item2] = value;
         }

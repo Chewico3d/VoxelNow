@@ -1,3 +1,5 @@
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\MapPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\MapVertexShader.glsl
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\SolidChunkPixelShader.glsl
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\FloatingPixelShader.glsl
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\SolidChunkVertexShader.glsl
@@ -6,6 +8,8 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Textures\SolidBl
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.Assets.deps.json
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.Assets.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.Assets.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.Core.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\VoxelNow.Assets.csproj.AssemblyReference.cache
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\VoxelNow.Assets.GeneratedMSBuildEditorConfig.editorconfig
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\VoxelNow.Assets.AssemblyInfoInputs.cache
@@ -16,7 +20,3 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\VoxelNow.Assets.
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\refint\VoxelNow.Assets.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\VoxelNow.Assets.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\ref\VoxelNow.Assets.dll
-C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.API.dll
-C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.API.pdb
-C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\MapPixelShader.glsl
-C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\MapVertexShader.glsl

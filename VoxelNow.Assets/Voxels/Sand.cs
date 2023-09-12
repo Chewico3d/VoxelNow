@@ -1,7 +1,7 @@
-﻿
-using VoxelNow.API;
+﻿using VoxelNow.API.API;
 
-namespace VoxelNow.Assets.Voxels {
+namespace VoxelNow.Assets.Voxels
+{
     public class Sand : IVoxelData {
         public uint voxelID { get { return 0x02; } }
         public VoxelType voxelType { get { return VoxelType.SolidVoxel; } }

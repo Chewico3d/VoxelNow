@@ -8,8 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VoxelNow.API\VoxelNow.API.csproj" />
-    <ProjectReference Include="..\VoxelNow.Core\VoxelNow.Core.csproj" />
+    <ProjectReference Include="..\VoxelNow.API\VoxelNow.Core.csproj" />
     <ProjectReference Include="..\VoxelNow.Rendering\VoxelNow.Rendering.csproj" />
   </ItemGroup>
 

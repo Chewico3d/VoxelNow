@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 using VoxelNow.Core;
 using VoxelNow.Rendering.FabricData;
 using VoxelNow.Rendering.MeshData;
-using VoxelNow.API;
+using VoxelNow.API.API;
 
-namespace VoxelNow.Rendering.Fabrics {
+namespace VoxelNow.Rendering.Fabrics
+{
     internal class SolidChunkFabric : IObjectFabric {
         public ushort renderObjectID { get { return 0x01; } }
 

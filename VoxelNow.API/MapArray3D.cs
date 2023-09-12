@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoxelNow.API {
+namespace VoxelNow.Core {
     public class MapArray3D<T> {
 
 

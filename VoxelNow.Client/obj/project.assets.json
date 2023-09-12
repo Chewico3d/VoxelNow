@@ -215,22 +215,9 @@
           }
         }
       },
-      "VoxelNow.API/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/VoxelNow.API.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/VoxelNow.API.dll": {}
-        }
-      },
       "VoxelNow.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "VoxelNow.API": "1.0.0"
-        },
         "compile": {
           "bin/placeholder/VoxelNow.Core.dll": {}
         },
@@ -467,15 +454,10 @@
         "version.txt"
       ]
     },
-    "VoxelNow.API/1.0.0": {
-      "type": "project",
-      "path": "../VoxelNow.API/VoxelNow.API.csproj",
-      "msbuildProject": "../VoxelNow.API/VoxelNow.API.csproj"
-    },
     "VoxelNow.Core/1.0.0": {
       "type": "project",
-      "path": "../VoxelNow.Core/VoxelNow.Core.csproj",
-      "msbuildProject": "../VoxelNow.Core/VoxelNow.Core.csproj"
+      "path": "../VoxelNow.API/VoxelNow.Core.csproj",
+      "msbuildProject": "../VoxelNow.API/VoxelNow.Core.csproj"
     },
     "VoxelNow.Rendering/1.0.0": {
       "type": "project",
@@ -522,8 +504,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Core\\VoxelNow.Core.csproj": {
-              "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Core\\VoxelNow.Core.csproj"
+            "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj": {
+              "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj"
             },
             "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Rendering\\VoxelNow.Rendering.csproj": {
               "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Rendering\\VoxelNow.Rendering.csproj"

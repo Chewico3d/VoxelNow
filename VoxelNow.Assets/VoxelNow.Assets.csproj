@@ -41,7 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VoxelNow.API\VoxelNow.API.csproj" />
+    <ProjectReference Include="..\VoxelNow.API\VoxelNow.Core.csproj" />
   </ItemGroup>
 
 </Project>

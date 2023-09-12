@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VoxelNow.API.TerrainTools {
+namespace VoxelNow.Core.TerrainTools {
     public class CurveModifier {
 
         public readonly List<Modifier> modifiers;

@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoxelNow.API;
-using VoxelNow.API.TerrainTools;
+using VoxelNow.API.API;
+using VoxelNow.Core.TerrainTools;
 
+using VoxelNow.Core;
 namespace VoxelNow.Assets.WorldGeneration
 {
-    public class WorldGeneration : IWorldGenerator {
+    public class WorldGeneration : IWorldGenerator
+    {
 
         CurveModifier curveModifier;
         PerlinNoiseMap2D noiseMap;

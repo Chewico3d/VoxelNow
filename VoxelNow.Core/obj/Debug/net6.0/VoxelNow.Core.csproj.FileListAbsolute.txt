@@ -2,6 +2,8 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.Core.deps.j
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.Core.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.Core.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.AssemblyLoader.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.AssemblyLoader.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.API.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Debug\net6.0\VoxelNow.Core.csproj.AssemblyReference.cache
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Debug\net6.0\VoxelNow.Core.GeneratedMSBuildEditorConfig.editorconfig

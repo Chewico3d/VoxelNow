@@ -4,12 +4,12 @@
     "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.Rendering\\VoxelNow.Rendering.csproj": {}
   },
   "projects": {
-    "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj": {
+    "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj",
-        "projectName": "VoxelNow.Core",
-        "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj",
+        "projectUniqueName": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj",
+        "projectName": "VoxelNow.API",
+        "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj",
         "packagesPath": "C:\\Users\\Chewico\\.nuget\\packages\\",
         "outputPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\obj\\",
         "projectStyle": "PackageReference",
@@ -32,6 +32,69 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj",
+        "projectName": "VoxelNow.AssemblyLoader",
+        "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj",
+        "packagesPath": "C:\\Users\\Chewico\\.nuget\\packages\\",
+        "outputPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Chewico\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj": {
+                "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -91,8 +154,11 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj": {
-                "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj"
+              "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj": {
+                "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj"
+              },
+              "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj": {
+                "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj"
               }
             }
           }

@@ -1,6 +1,6 @@
 ﻿using OpenTK.Mathematics;
 
-namespace VoxelNow.Server {
+namespace VoxelNow.Rendering{
     public class Camera {
 
         public float xPos, yPos, zPos;

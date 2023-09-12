@@ -1,11 +1,5 @@
 ﻿using OpenTK.Mathematics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoxelNow.Rendering.VallVoxel.Client.Graphics;
-using VoxelNow.Server;
+
 
 namespace VoxelNow.Rendering.RenderCollection {
     internal class SolidChunkCollection : IRenderCollection {

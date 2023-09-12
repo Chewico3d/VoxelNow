@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoxelNow.Core;
-using VoxelNow.Rendering.VallVoxel.Client.Graphics;
+﻿
+using VoxelNow.AssemblyLoader;
+using VoxelNow.Rendering;
 
 namespace VoxelNow.Rendering.Materials {
     internal class MapMaterial : Shader{

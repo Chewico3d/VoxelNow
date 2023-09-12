@@ -1,4 +1,4 @@
-﻿using VoxelNow.API.API;
+﻿using VoxelNow.API;
 
 namespace VoxelNow.Assets.Voxels
 {

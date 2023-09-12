@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K6P8Y2wrtQv01CylqP7ocPxzF5Lg5JtOWsIIoWjJ0nD1fc5VKyLaG6CREtA2D/b9+r79PnTuPx3jfW00AhC9Mg==",
+  "dgSpecHash": "emHYsHDkSzKDwHAGzR2/KY2Yt7tXHDjHvhG/AogKtatGOZCL7s/ogs7e8G/sNa3hMuS3K3n/nz5i0Ec+wAeG6A==",
   "success": true,
-  "projectFilePath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj",
+  "projectFilePath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

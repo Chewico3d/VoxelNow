@@ -1,0 +1,15 @@
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\bin\Debug\net6.0\AssemblyLoader.deps.json
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\bin\Debug\net6.0\AssemblyLoader.dll
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\bin\Debug\net6.0\AssemblyLoader.pdb
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\bin\Debug\net6.0\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\bin\Debug\net6.0\VoxelNow.API.pdb
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.csproj.AssemblyReference.cache
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.GeneratedMSBuildEditorConfig.editorconfig
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.AssemblyInfoInputs.cache
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.AssemblyInfo.cs
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.csproj.CoreCompileInputs.cache
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.csproj.CopyComplete
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.dll
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\refint\AssemblyLoader.dll
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\AssemblyLoader.pdb
+C:\Chewico\Projects\VoxelNow\AssemblyLoader\obj\Debug\net6.0\ref\AssemblyLoader.dll

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace VoxelNow.Core {
+﻿namespace VoxelNow.API {
     public class MapArray2D<T> {
 
         public readonly int sizeX, sizeY;
@@ -27,8 +21,6 @@ namespace VoxelNow.Core {
             int posID = x + y * sizeX;
             array[posID] = value;
         }
-
-        
 
     }
 }

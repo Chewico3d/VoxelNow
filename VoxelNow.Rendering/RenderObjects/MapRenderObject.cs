@@ -1,11 +1,5 @@
 ﻿using OpenTK.Graphics.OpenGL4;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VoxelNow.Rendering.MeshData;
-using VoxelNow.Server;
 
 namespace VoxelNow.Rendering.RenderObjects {
     internal class MapRenderObject : IRenderObject {

@@ -1,8 +1,10 @@
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Rendering.deps.json
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Rendering.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Rendering.pdb
-C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Core.dll
-C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.Core.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.API.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.AssemblyLoader.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.AssemblyLoader.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\bin\Debug\net6.0\VoxelNow.API.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Debug\net6.0\VoxelNow.Rendering.csproj.AssemblyReference.cache
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Debug\net6.0\VoxelNow.Rendering.GeneratedMSBuildEditorConfig.editorconfig
 C:\Chewico\Projects\VoxelNow\VoxelNow.Rendering\obj\Debug\net6.0\VoxelNow.Rendering.AssemblyInfoInputs.cache

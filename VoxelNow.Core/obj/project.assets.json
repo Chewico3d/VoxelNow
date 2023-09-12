@@ -11,6 +11,19 @@
         "runtime": {
           "bin/placeholder/VoxelNow.API.dll": {}
         }
+      },
+      "VoxelNow.AssemblyLoader/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "VoxelNow.API": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/VoxelNow.AssemblyLoader.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VoxelNow.AssemblyLoader.dll": {}
+        }
       }
     }
   },
@@ -19,11 +32,17 @@
       "type": "project",
       "path": "../VoxelNow.API/VoxelNow.API.csproj",
       "msbuildProject": "../VoxelNow.API/VoxelNow.API.csproj"
+    },
+    "VoxelNow.AssemblyLoader/1.0.0": {
+      "type": "project",
+      "path": "../VoxelNow.AssemblyLoader/VoxelNow.AssemblyLoader.csproj",
+      "msbuildProject": "../VoxelNow.AssemblyLoader/VoxelNow.AssemblyLoader.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "VoxelNow.API >= 1.0.0"
+      "VoxelNow.API >= 1.0.0",
+      "VoxelNow.AssemblyLoader >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -60,6 +79,9 @@
           "projectReferences": {
             "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj": {
               "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj"
+            },
+            "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj": {
+              "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.AssemblyLoader\\VoxelNow.AssemblyLoader.csproj"
             }
           }
         }

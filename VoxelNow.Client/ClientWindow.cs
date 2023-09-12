@@ -1,12 +1,12 @@
 ﻿using OpenTK.Graphics.OpenGL4;
 using OpenTK.Windowing.Common;
 using OpenTK.Windowing.Desktop;
-using OpenTK.Windowing.GraphicsLibraryFramework;
 using System.ComponentModel;
 using VoxelNow.Core;
 using VoxelNow.Rendering;
 using VoxelNow.Rendering.FabricData;
 using VoxelNow.Rendering.RenderObjects;
+using VoxelNow.AssemblyLoader;
 
 namespace VoxelNow.Client {
     internal class ClientWindow : GameWindow{

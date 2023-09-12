@@ -14,9 +14,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj",
-      "projectName": "VoxelNow.Core",
-      "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.Core.csproj",
+      "projectUniqueName": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj",
+      "projectName": "VoxelNow.API",
+      "projectPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\VoxelNow.API.csproj",
       "packagesPath": "C:\\Users\\Chewico\\.nuget\\packages\\",
       "outputPath": "C:\\Chewico\\Projects\\VoxelNow\\VoxelNow.API\\obj\\",
       "projectStyle": "PackageReference",

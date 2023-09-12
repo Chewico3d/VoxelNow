@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VoxelNow.Core;
+﻿using VoxelNow.API;
 
 namespace VoxelNow.Rendering.FabricData {
     public class SolidCunkFabricData : IFabricData {
 
         int IFabricData.renderObjectID { get { return 0x01; } }
 
-        ChunkDatabase database;
+        IChunkDatabase database;
         public int xID, yID, zID;
 
-        public SolidCunkFabricData(ChunkDatabase database, int xID, int yID, int zID) 
+        public SolidCunkFabricData(IChunkDatabase database, int xID, int yID, int zID) 
 {
             this.database = database;
             this.xID = xID;

@@ -1,7 +1,5 @@
 ﻿using OpenTK.Graphics.OpenGL4;
 using VoxelNow.Rendering.MeshData;
-using VoxelNow.Server;
-
 namespace VoxelNow.Rendering.RenderObjects {
     public class FloatingRenderObject : IRenderObject {
 

@@ -5,7 +5,7 @@ namespace VoxelNow.AssemblyLoader {
     public static class AssetLoader {
 
         public static string assetPath = "AssetPack";
-        public static IVoxelData[] voxelsData;
+        internal static IVoxelData[] voxelsData;
         public static IProceduralVoxel[] proceduralVoxels;
         public static IWorldGenerator worldGenerator;
 
@@ -35,7 +35,15 @@ namespace VoxelNow.AssemblyLoader {
                         continue;
                     }
 
-                    if (type.IsAssignableTo(typeof(IWorldGenerator))) {
+                    else if (type.IsAssignableTo(typeof(IProceduralVoxel))) {
+                        IProceduralVoxel workingVoxel = (IProceduralVoxel)Activator.CreateInstance(type);
+                        Console.WriteLine(" -> Loading procedural voxel : " + type.Name + " ID : " + workingVoxel.ID);
+                        proceduralVoxels[workingVoxel.ID] = workingVoxel;
+
+                        continue;
+                    }
+
+                    else if (type.IsAssignableTo(typeof(IWorldGenerator))) {
                         if (worldGenerator != null)
                             Console.WriteLine(" X Overlaping world generator. Be carefull");
                         worldGenerator = (IWorldGenerator)Activator.CreateInstance(type);
@@ -47,6 +55,8 @@ namespace VoxelNow.AssemblyLoader {
                 }
 
             }
+
+            VoxelAssets.Initialize();
 
         }
 

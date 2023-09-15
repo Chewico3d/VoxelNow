@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace VoxelNow.Client {
     internal class playerScript {
 
-        public float playerX, playerY, playerZ = -1;
+        public float playerX = 100, playerY = 200, playerZ = 100;
         public float playerYaw, playerPitch;
 
         float lastMousePosX = 1280 / 2;
@@ -25,8 +25,12 @@ namespace VoxelNow.Client {
             playerPitch += differenceY * 0.006f;
             playerYaw += differenceX * 0.006f;
 
-            float frontAxisZ = MathF.Cos(playerYaw) * 20;
-            float frontAxisX = MathF.Sin(playerYaw) * 20;
+            float frontAxisZ = MathF.Cos(playerYaw) * 5;
+            float frontAxisX = MathF.Sin(playerYaw) * 5;
+            if (Program.nativeWindow.IsKeyDown(Keys.LeftControl)) {
+                frontAxisX *= 5;
+                frontAxisZ *= 5;
+            }
 
             if (Program.nativeWindow.IsKeyDown(Keys.W)) {
                 playerZ += frontAxisZ * 0.036f;
@@ -46,10 +50,10 @@ namespace VoxelNow.Client {
                 playerZ -= frontAxisX * -0.036f;
             }
             if (Program.nativeWindow.IsKeyDown(Keys.Space)) {
-                playerY += 0.9f;
+                playerY += (Program.nativeWindow.IsKeyDown(Keys.LeftControl))? 0.9f : 0.1f;
             }
             if (Program.nativeWindow.IsKeyDown(Keys.LeftShift)) {
-                playerY -= 0.9f;
+                playerY -= (Program.nativeWindow.IsKeyDown(Keys.LeftControl)) ? 0.9f : 0.1f;
             }
 
             Program.nativeWindow.MousePosition = new OpenTK.Mathematics.Vector2(1280 / 2, 720 / 2);

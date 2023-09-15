@@ -9,6 +9,8 @@
   <ItemGroup>
     <None Remove="Shaders\FloatingPixelShader.glsl" />
     <None Remove="Shaders\FloatingVertexShader.glsl" />
+    <None Remove="Shaders\FluidPixelShader.glsl" />
+    <None Remove="Shaders\FluidVertexShader.glsl" />
     <None Remove="Shaders\MapPixelShader.glsl" />
     <None Remove="Shaders\MapVertexShader.glsl" />
     <None Remove="Shaders\SolidChunkPixelShader.glsl" />
@@ -17,6 +19,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Shaders\FluidPixelShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Shaders\FluidVertexShader.glsl">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Shaders\MapPixelShader.glsl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

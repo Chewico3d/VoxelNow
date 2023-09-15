@@ -2,7 +2,7 @@
 using VoxelNow.Rendering.MeshData;
 
 namespace VoxelNow.Rendering.RenderObjects {
-    public class SolidChunkRenderObject : IRenderObject {
+    public class SolidRenderObject : IRenderObject {
 
         public ushort renderObjectID { get { return 0x01; } }
 
@@ -10,8 +10,10 @@ namespace VoxelNow.Rendering.RenderObjects {
         int v_Buffer;
         int v_UVs;
         int v_PlaneUV;
-        int v_AmbientOcclusion;
+        int v_VertexShadow;
         int v_Normal;
+        int v_MaterialProps;
+        int v_SunIntensity;
         int indexBuffer;
 
         int numberOfTriangles;
@@ -23,7 +25,7 @@ namespace VoxelNow.Rendering.RenderObjects {
                 return false;
 
             GL.BindVertexArray(VAO);
-            GL.DrawElements(PrimitiveType.Triangles, numberOfTriangles, DrawElementsType.UnsignedShort, 0);
+            GL.DrawElements(PrimitiveType.Triangles, numberOfTriangles, DrawElementsType.UnsignedInt, 0);
 
             return true;
         }
@@ -35,12 +37,14 @@ namespace VoxelNow.Rendering.RenderObjects {
                 VAO = GL.GenVertexArray();
                 v_Buffer = GL.GenBuffer();
                 v_UVs = GL.GenBuffer();
-                v_AmbientOcclusion = GL.GenBuffer();
+                v_VertexShadow = GL.GenBuffer();
                 v_Normal = GL.GenBuffer();
                 v_PlaneUV = GL.GenBuffer();
+                v_MaterialProps = GL.GenBuffer();
+                v_SunIntensity = GL.GenBuffer();
                 indexBuffer = GL.GenBuffer();
             }
-            SolidChunkMeshData solidChunkMeshData = (SolidChunkMeshData)meshData;
+            SolidkMeshData solidChunkMeshData = (SolidkMeshData)meshData;
 
             GL.BindVertexArray(VAO);
 
@@ -56,10 +60,10 @@ namespace VoxelNow.Rendering.RenderObjects {
             GL.VertexAttribPointer(1, 2, VertexAttribPointerType.Byte, false, 2, 0);
             GL.EnableVertexAttribArray(1);
 
-            GL.BindBuffer(BufferTarget.ArrayBuffer, v_AmbientOcclusion);
-            GL.BufferData(BufferTarget.ArrayBuffer, solidChunkMeshData.v_AmbientOclusion.Length, solidChunkMeshData.v_AmbientOclusion, BufferUsageHint.DynamicDraw);
+            GL.BindBuffer(BufferTarget.ArrayBuffer, v_VertexShadow);
+            GL.BufferData(BufferTarget.ArrayBuffer, solidChunkMeshData.v_VertexShadow.Length * sizeof(ushort), solidChunkMeshData.v_VertexShadow, BufferUsageHint.DynamicDraw);
 
-            GL.VertexAttribIPointer(2, 1, VertexAttribIntegerType.UnsignedByte, 1, IntPtr.Zero);
+            GL.VertexAttribIPointer(2, 1, VertexAttribIntegerType.UnsignedShort, 2, IntPtr.Zero);
             GL.EnableVertexAttribArray(2);
 
             GL.BindBuffer(BufferTarget.ArrayBuffer, v_Normal);
@@ -74,8 +78,14 @@ namespace VoxelNow.Rendering.RenderObjects {
             GL.VertexAttribPointer(4, 2, VertexAttribPointerType.UnsignedByte, false, 2, 0);
             GL.EnableVertexAttribArray(4);
 
+            GL.BindBuffer(BufferTarget.ArrayBuffer, v_MaterialProps);
+            GL.BufferData(BufferTarget.ArrayBuffer, solidChunkMeshData.v_MaterialInfo.Length, solidChunkMeshData.v_MaterialInfo, BufferUsageHint.DynamicDraw);
+
+            GL.VertexAttribPointer(5, 1, VertexAttribPointerType.UnsignedByte, false, 1, 0);
+            GL.EnableVertexAttribArray(5);
+
             GL.BindBuffer(BufferTarget.ElementArrayBuffer, indexBuffer);
-            GL.BufferData(BufferTarget.ElementArrayBuffer, solidChunkMeshData.indices.Length * sizeof(ushort), solidChunkMeshData.indices, BufferUsageHint.DynamicDraw);
+            GL.BufferData(BufferTarget.ElementArrayBuffer, solidChunkMeshData.indices.Length * sizeof(uint), solidChunkMeshData.indices, BufferUsageHint.DynamicDraw);
 
             numberOfTriangles = solidChunkMeshData.indices.Length;
         }

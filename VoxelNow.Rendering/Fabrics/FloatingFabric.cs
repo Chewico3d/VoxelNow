@@ -3,7 +3,7 @@ using VoxelNow.Rendering.FabricData;
 using VoxelNow.Rendering.MeshData;
 
 namespace VoxelNow.Rendering.ObjectsFabrics {
-    internal class FloatingObjectFabric : IObjectFabric {
+    internal class FloatingFabric : IObjectFabric {
         public ushort renderObjectID { get { return 0x00; } }
 
         public IMeshData GenerateMeshData(IFabricData fabricData) {

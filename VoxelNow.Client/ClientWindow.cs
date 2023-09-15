@@ -17,30 +17,45 @@ namespace VoxelNow.Client {
         ChunkDatabase chunkDatabase;
         playerScript playerScript = new playerScript();
 
+        float averageFrameRate = 60;
+
         protected override void OnLoad() {
             GL.Enable(EnableCap.CullFace);
             GL.CullFace(CullFaceMode.Back);
+
+            GL.ClearColor(0f, 0f, 0, 1f);
+            GL.Clear(ClearBufferMask.ColorBufferBit);
+            SwapBuffers();
+
             GL.ClearColor(0.2f, 0.4f, 0.6f, 1f);
 
             AssetLoader.LoadAssemblyData();
-            chunkDatabase = new ChunkDatabase(30, 12, 30);
+            chunkDatabase = new ChunkDatabase(10, 12, 10);
 
             GL.Enable(EnableCap.DepthTest);
-            renderScene.Initialize();
 
             chunkDatabase.GenerateTerrain();
 
+            renderScene.Initialize();
             for (int x = 0; x < chunkDatabase.chunks.Length; x++) {
 
                 Chunk workingChunk = chunkDatabase.chunks[x];
 
-                SolidCunkFabricData solidCunkFabricData = new SolidCunkFabricData(chunkDatabase, workingChunk.IDx, workingChunk.IDy, workingChunk.IDz);
+                SolidFabricData solidCunkFabricData = new SolidFabricData(chunkDatabase, workingChunk.IDx, workingChunk.IDy, workingChunk.IDz);
 
                 uint ID = renderScene.GenerateRenderObject(solidCunkFabricData);
                 renderScene.SetObjectPosition(ID,
                     chunkDatabase.chunks[x].IDx * 32, chunkDatabase.chunks[x].IDy * 32, chunkDatabase.chunks[x].IDz * 32);
 
+
+                FluidFabricData fluidData = new FluidFabricData(chunkDatabase, workingChunk.IDx, workingChunk.IDy, workingChunk.IDz);
+
+                ID = renderScene.GenerateRenderObject(fluidData);
+                renderScene.SetObjectPosition(ID,
+                    chunkDatabase.chunks[x].IDx * 32, chunkDatabase.chunks[x].IDy * 32, chunkDatabase.chunks[x].IDz * 32);
+
             }
+            renderScene.StartBuildThread();
 
             Program.nativeWindow = this;
             Program.nativeWindow.MousePosition = new OpenTK.Mathematics.Vector2(1280 / 2, 720 / 2);
@@ -59,6 +74,9 @@ namespace VoxelNow.Client {
 
         protected override void OnUpdateFrame(FrameEventArgs args) {
 
+            averageFrameRate = averageFrameRate * .9f + 1 / (float)args.Time * 0.1f;
+            this.Title = "Voxel Now fps: " + (int)averageFrameRate;
+
             playerScript.Update();
 
             renderScene.mainRenderCamera.xPos = playerScript.playerX;
@@ -67,7 +85,6 @@ namespace VoxelNow.Client {
 
             renderScene.mainRenderCamera.yaw = playerScript.playerYaw;
             renderScene.mainRenderCamera.pitch = playerScript.playerPitch;
-
 
         }
         protected override void OnClosing(CancelEventArgs e) {

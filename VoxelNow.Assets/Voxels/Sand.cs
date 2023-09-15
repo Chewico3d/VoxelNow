@@ -19,5 +19,9 @@ namespace VoxelNow.Assets.Voxels
 
         public bool isProcedural { get { return false; } }
         public ushort proceduralObjectReference => throw new NotImplementedException();
+
+        public bool hasLightScattering { get { return false; } }
+
+        public byte lightResistence => throw new NotImplementedException();
     }
 }

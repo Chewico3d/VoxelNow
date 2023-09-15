@@ -5,7 +5,7 @@ namespace VoxelNow.API
     {
         public ushort ID { get; }
 
-        //public 
+        public void GenerateAt(IChunkDatabase chunkDatabase, int x, int y, int z); 
 
     }
 }

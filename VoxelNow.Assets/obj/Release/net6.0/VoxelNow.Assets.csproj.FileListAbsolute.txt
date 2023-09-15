@@ -20,3 +20,5 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\VoxelNow.Assets.
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\obj\Release\net6.0\ref\VoxelNow.Assets.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.API.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\VoxelNow.API.pdb
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\FluidPixelShader.glsl
+C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Release\net6.0\Shaders\FluidVertexShader.glsl

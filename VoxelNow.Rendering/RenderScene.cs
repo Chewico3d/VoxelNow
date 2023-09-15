@@ -14,6 +14,7 @@ namespace VoxelNow.Rendering
         FloatingMaterial floatingMaterial;
         SolidChunkMaterial solidChunkMaterial;
         MapMaterial mapMaterial;
+        FluidMaterial fluidMaterial;
 
         TiledTexture solidBlocksTexture;
 
@@ -25,28 +26,36 @@ namespace VoxelNow.Rendering
 
         
         public void Initialize() {
-            AssemblyListLoader.ReadFromAssembly();
+            FabricList.Load();
 
-            renderCollections = AssemblyListLoader.collections;
-            renderObjects = AssemblyListLoader.renderObjects;
-            fabrics = AssemblyListLoader.fabrics;
+            renderCollections = FabricList.collections;
+            renderObjects = FabricList.renderObjects;
+            fabrics = FabricList.fabrics;
 
             floatingMaterial = new FloatingMaterial();
             solidChunkMaterial = new SolidChunkMaterial();
             mapMaterial = new MapMaterial();
+            fluidMaterial = new FluidMaterial();
 
             solidBlocksTexture = new TiledTexture(AssetLoader.GetAssetPath("Textures/SolidBlocksTexture.png"), 20, 20);
             solidChunkMaterial.BindBaseTexture(solidBlocksTexture);
 
+
+        }
+
+        public void StartBuildThread() {
+
             buildThread = new Thread(FabricBuildLoop);
             buildThread.Start();
-
         }
         public void Render() {
 
             renderCollections[2].Draw(mainRenderCamera, mapMaterial);
 
-            solidChunkMaterial.SetSun(1, 5, 3);
+            renderCollections[3].Draw(mainRenderCamera, fluidMaterial);
+
+            solidChunkMaterial.SetSun(1, 3, 2);
+            solidChunkMaterial.SetInvertedCamera(mainRenderCamera);
             renderCollections[1].Draw(mainRenderCamera, solidChunkMaterial);
             renderCollections[0].Draw(mainRenderCamera, floatingMaterial);
 
@@ -95,7 +104,7 @@ namespace VoxelNow.Rendering
         void FabricBuild() {
             if (objectsToBuild.Count == 0)
                 return;
-
+            
             (uint, IFabricData) fabricData = objectsToBuild.Dequeue();
             IObjectFabric objectFabric = fabrics[GetRenderObjectID(fabricData.Item1)];
 

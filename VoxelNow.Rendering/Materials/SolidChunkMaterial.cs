@@ -20,6 +20,10 @@ namespace VoxelNow.Rendering.Materials {
 
         }
 
+        internal void SetInvertedCamera(Camera cam) {
+            SetMatrix4("invertedCameraMatrix", cam.GetRawCameraMatrix().Inverted());
+        }
+
         internal void SetSun(float xDir, float yDir, float zDir) {
 
             float magnitude = MathF.Sqrt(xDir * xDir + yDir * yDir + zDir * zDir);

@@ -1,4 +1,5 @@
-﻿using VoxelNow.API;
+﻿using System.Runtime.CompilerServices;
+using VoxelNow.API;
 using VoxelNow.AssemblyLoader;
 
 namespace VoxelNow.Core {
@@ -10,6 +11,7 @@ namespace VoxelNow.Core {
         public int voxelSizeZ { get { return sizeZ * GenerationConstants.voxelSizeZ; } }
 
         public readonly Chunk[] chunks;
+        public Queue<(int, int, int)> proceduralVoxel = new Queue<(int, int, int)> ();
 
         public ChunkDatabase(int sizeX, int sizeY, int sizeZ) {
             this.sizeX = sizeX;
@@ -28,6 +30,17 @@ namespace VoxelNow.Core {
         public void GenerateTerrain() {
 
             AssetLoader.worldGenerator.GenerateTerrain(this, 0);
+            while(proceduralVoxel.Count != 0) {
+                (int,int,int) proceduralVoxelPos = proceduralVoxel.Dequeue();
+                ushort voxelID = GetVoxel(proceduralVoxelPos.Item1, proceduralVoxelPos.Item2, proceduralVoxelPos.Item3);
+                if (!VoxelAssets.IsProcedural(voxelID))
+                    continue;
+
+                ushort proceduralID = VoxelAssets.GetProceduralID(voxelID);
+                AssetLoader.proceduralVoxels[proceduralID].GenerateAt(this, proceduralVoxelPos.Item1, proceduralVoxelPos.Item2, proceduralVoxelPos.Item3);
+            }
+
+            VoxelShadow.GenerateAllChunkShadows(this);
 
         }
 
@@ -65,34 +78,66 @@ namespace VoxelNow.Core {
         }
 
         public void SetVoxel(int x, int y, int z, ushort value) {
+            if (x < 0 | y < 0 | z < 0)
+                return;
+            if (x >= voxelSizeX | y >= voxelSizeY | z >= voxelSizeZ)
+                return;
+
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
+            if (VoxelAssets.IsProcedural(value))
+                proceduralVoxel.Enqueue((x, y, z));
+
             chunks[voxelPos.Item1].voxels[voxelPos.Item2] = value;
         }
         public ushort GetVoxel(int x, int y, int z) {
-
-
-            if (x < 0 || z < 0)
+            if (x < 0 | z < 0 | x >= voxelSizeX | y >= voxelSizeY | z >= voxelSizeZ)
                 return 0;
-
             if (y <= 0)
                 return 1;
-
-            if (x >= sizeX * GenerationConstants.voxelSizeX || y >= sizeY * GenerationConstants.voxelSizeY
-                || z >= sizeZ * GenerationConstants.voxelSizeZ)
-                return 0;
 
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
             return chunks[voxelPos.Item1].voxels[voxelPos.Item2];
         }
-        void SetVoxelLight(int x, int y, int z, ushort value) {
+
+        public byte GetSunLight(int x, int y, int z) {
+            if (x < 0 | y < 0 | z < 0 | x >= voxelSizeX | y >= voxelSizeY | z >= voxelSizeZ)
+                return 255;
+
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
-            chunks[voxelPos.Item1].lightValue[voxelPos.Item2] = value;
+            return chunks[voxelPos.Item1].sunLight[voxelPos.Item2];
+
         }
-        ushort GetVoxelLight(int x, int y, int z) {
+        public void SetSunLight(int x, int y, int z, byte value) {
+            if (x < 0 | y <= 0 | z < 0 | x >= voxelSizeX | y >= voxelSizeY | z >= voxelSizeZ)
+                return;
+
             (int, int) voxelPos = GetVoxelCordinates(x, y, z);
-            return chunks[voxelPos.Item1].lightValue[voxelPos.Item2];
+            chunks[voxelPos.Item1].sunLight[voxelPos.Item2] = value;
+
         }
 
+        public byte GetWaterValue(int x, int y, int z) {
+            if (x < 0 | y < 0 | z < 0 | x >= voxelSizeX | y >= voxelSizeY | z >= voxelSizeZ)
+                return 127;
+
+            (int, int) voxelPos = GetVoxelCordinates(x, y, z);
+            byte fluid = chunks[voxelPos.Item1].fluid[voxelPos.Item2];
+
+            if (fluid >= 128)
+                return 0;
+
+            return fluid;
+        }
+        public void SetWaterValue(int x, int y, int z, byte value) {
+
+            if (x < 0 | y < 0 | z < 0 | x >= voxelSizeX | y >= voxelSizeY | z >= voxelSizeZ)
+                return;
+            value = value >= 128 ? (byte)127 : value;
+
+            (int, int) voxelPos = GetVoxelCordinates(x, y, z);
+            chunks[voxelPos.Item1].fluid[voxelPos.Item2] = value;
+
+        }
 
         (int, int) GetVoxelCordinates(int x, int y, int z) {
 
@@ -115,35 +160,8 @@ namespace VoxelNow.Core {
             return (chunkID, voxelID);
 
         }
-
         int GetChunkID(int x, int y, int z) {
             return x + y * sizeX + z * sizeX * sizeY;
-        }
-
-        static (short, short, short, short) GetFromVoxelColor(ushort value) {
-            short sun = (short)(value & 0b_1111);
-            short blue = (short)((value >> 4) & 0b_1111);
-            short green = (short)((value >> 8) & 0b_1111);
-            short red = (short)((value >> 12) & 0b_1111);
-
-            return (red, green, blue, sun);
-
-        }
-
-
-        static ushort GetVoxelColor(byte red, byte green, byte blue, byte sun) {
-            red = (byte)(0b_1111 & red);
-            green = (byte)(0b_1111 & green);
-            blue = (byte)(0b_1111 & blue);
-            sun = (byte)(0b_1111 & sun);
-
-            ushort value = sun;
-            value += (ushort)(blue >> 4);
-            value += (ushort)(green >> 8);
-            value += (ushort)(red >> 12);
-
-            return value;
-
         }
 
 

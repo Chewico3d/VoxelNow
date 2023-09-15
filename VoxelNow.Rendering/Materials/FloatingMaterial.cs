@@ -1,6 +1,5 @@
 ﻿
 using VoxelNow.AssemblyLoader;
-using VoxelNow.Rendering;
 
 namespace VoxelNow.Rendering.Materials {
     internal class FloatingMaterial : Shader{

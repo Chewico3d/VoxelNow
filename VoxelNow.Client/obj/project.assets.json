@@ -243,7 +243,8 @@
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "VoxelNow.API": "1.0.0",
-          "VoxelNow.AssemblyLoader": "1.0.0"
+          "VoxelNow.AssemblyLoader": "1.0.0",
+          "VoxelNow.Rendering": "1.0.0"
         },
         "compile": {
           "bin/placeholder/VoxelNow.Core.dll": {}

@@ -8,6 +8,7 @@ namespace VoxelNow.Assets.Voxels
 
         public VoxelRenderingFaceMode renderingFaceMode { get { return VoxelRenderingFaceMode.Static; } }
 
+
         public TextureCoord[] textureCoordsFaces { get; } = new TextureCoord[6] {
             new TextureCoord(3,0),
             new TextureCoord(3,0),
@@ -19,5 +20,9 @@ namespace VoxelNow.Assets.Voxels
 
         public bool isProcedural { get { return false; } }
         public ushort proceduralObjectReference => throw new NotImplementedException();
+
+        public bool hasLightScattering { get { return false; } }
+
+        public byte lightResistence => throw new NotImplementedException();
     }
 }

@@ -1,10 +1,9 @@
-﻿using OpenTK.Mathematics;
-
+﻿
+using OpenTK.Mathematics;
 
 namespace VoxelNow.Rendering.RenderCollection {
-    internal class SolidChunkCollection : IRenderCollection {
-        public ushort renderObjectID { get { return 0x01; } }
-
+    internal class FluidRenderCollection : IRenderCollection {
+        public ushort renderObjectID { get { return 0x03; } }
 
         public List<IRenderObject> renderObjects = new List<IRenderObject>();
         public List<(float, float, float)> renderObjectsPositions = new List<(float, float, float)>();
@@ -19,7 +18,7 @@ namespace VoxelNow.Rendering.RenderCollection {
         public void Draw(Camera camera, Shader shader) {
             shader.Use();
             camera.CalculateCameraMatrix();
-            int drawed = 0;
+
             for (int x = 0; x < renderObjects.Count; x++) {
                 (float, float, float) position = renderObjectsPositions[x];
 
@@ -32,14 +31,11 @@ namespace VoxelNow.Rendering.RenderCollection {
                 if (distanceToCamera > 600 * 600)
                     continue;
 
-
                 Matrix4 matrix = camera.GetMatrixForObject(position.Item1, position.Item2, position.Item3);
                 shader.SetTransformationMatrix(matrix);
 
                 IRenderObject currentRendrerObject = renderObjects[x];
-                if (currentRendrerObject.Draw())
-                    drawed++;
-                
+                currentRendrerObject.Draw();
 
             }
 

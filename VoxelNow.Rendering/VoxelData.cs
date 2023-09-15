@@ -34,6 +34,7 @@
         internal static readonly uint[] triangleConfiguration = { 0, 2, 1, 2, 3, 1 };
 
         internal static readonly uint[] alternativeTriangleConfiguration = { 0, 3, 1, 0, 2, 3 };
+        internal static readonly uint[] invertedFace = { 0, 1, 2, 2, 1, 3 };
 
         internal static readonly byte[] UV_Cords = {
             0,0, 0, 1, 1, 0, 1, 1

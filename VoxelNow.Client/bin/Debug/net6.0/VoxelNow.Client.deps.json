@@ -187,7 +187,8 @@
       "VoxelNow.Core/1.0.0": {
         "dependencies": {
           "VoxelNow.API": "1.0.0",
-          "VoxelNow.AssemblyLoader": "1.0.0"
+          "VoxelNow.AssemblyLoader": "1.0.0",
+          "VoxelNow.Rendering": "1.0.0"
         },
         "runtime": {
           "VoxelNow.Core.dll": {}

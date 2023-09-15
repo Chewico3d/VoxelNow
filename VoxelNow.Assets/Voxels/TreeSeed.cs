@@ -12,5 +12,9 @@ namespace VoxelNow.Assets.Voxels {
 
         public VoxelRenderingFaceMode renderingFaceMode => throw new NotImplementedException();
         public TextureCoord[] textureCoordsFaces => throw new NotImplementedException();
+
+        public bool hasLightScattering { get { return false; } }
+        
+        public byte lightResistence => throw new NotImplementedException();
     }
 }

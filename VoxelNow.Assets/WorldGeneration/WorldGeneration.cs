@@ -54,7 +54,12 @@ namespace VoxelNow.Assets.WorldGeneration
                             chunkDatabase.SetVoxel(x, y, z, 2);
                         else {
                             if(y + 1 >= initialHeight) {
-                                if(x == 300 && z == 300)
+
+                                bool IsTree;
+                                IsTree = ((float)x) % 5 == 0;
+                                IsTree = IsTree & ((float)z) % 5 == 0;
+
+                                if (IsTree)
                                     chunkDatabase.SetVoxel(x, y, z, 0x200);
                                 else
                                     chunkDatabase.SetVoxel(x, y, z, 4);
@@ -64,6 +69,10 @@ namespace VoxelNow.Assets.WorldGeneration
                         }
 
                     }
+
+                    for(int y = initialHeight; y < 118; y++)
+                        chunkDatabase.SetWaterValue(x, y, z, 127);
+
                 }
 
             }

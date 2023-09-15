@@ -11,6 +11,8 @@
       </group>
     </dependencies>
     <contentFiles>
+      <files include="any/net6.0/Shaders/MapPixelShader.glsl" buildAction="Content" />
+      <files include="any/net6.0/Shaders/MapVertexShader.glsl" buildAction="Content" />
       <files include="any/net6.0/Shaders/SolidChunkPixelShader.glsl" buildAction="Content" />
       <files include="any/net6.0/Shaders/FloatingPixelShader.glsl" buildAction="Content" />
       <files include="any/net6.0/Shaders/SolidChunkVertexShader.glsl" buildAction="Content" />
@@ -20,6 +22,10 @@
   </metadata>
   <files>
     <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\bin\Debug\net6.0\VoxelNow.Assets.dll" target="lib\net6.0\VoxelNow.Assets.dll" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\MapPixelShader.glsl" target="content\Shaders\MapPixelShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\MapPixelShader.glsl" target="contentFiles\any\net6.0\Shaders\MapPixelShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\MapVertexShader.glsl" target="content\Shaders\MapVertexShader.glsl" />
+    <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\MapVertexShader.glsl" target="contentFiles\any\net6.0\Shaders\MapVertexShader.glsl" />
     <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\SolidChunkPixelShader.glsl" target="content\Shaders\SolidChunkPixelShader.glsl" />
     <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\SolidChunkPixelShader.glsl" target="contentFiles\any\net6.0\Shaders\SolidChunkPixelShader.glsl" />
     <file src="C:\Chewico\Projects\VoxelNow\VoxelNow.Assets\Shaders\FloatingPixelShader.glsl" target="content\Shaders\FloatingPixelShader.glsl" />

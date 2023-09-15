@@ -41,6 +41,19 @@ namespace VoxelNow.Rendering{
             return invertZ * objectTranslation * cameraMatrix;
 
         }
+        public Matrix4 GetRawCameraMatrix() {
+            Matrix4 invertZ = Matrix4.CreateScale(1, 1, -1);
+
+            return invertZ * cameraMatrix;
+        }
+        public bool isInsideCameraInbound(float posX, float posY) {
+            float cameraOriginX = xPos;
+            float cameraOriginZ = zPos;
+
+            return false;
+
+
+        }
 
     }
 }

@@ -15,3 +15,5 @@ C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Debug\net6.0\VoxelNow.Core.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Debug\net6.0\refint\VoxelNow.Core.dll
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Debug\net6.0\VoxelNow.Core.pdb
 C:\Chewico\Projects\VoxelNow\VoxelNow.Core\obj\Debug\net6.0\ref\VoxelNow.Core.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.Rendering.dll
+C:\Chewico\Projects\VoxelNow\VoxelNow.Core\bin\Debug\net6.0\VoxelNow.Rendering.pdb

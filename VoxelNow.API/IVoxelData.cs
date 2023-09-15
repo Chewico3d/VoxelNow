@@ -11,8 +11,10 @@
         public VoxelType voxelType { get; }
         public VoxelRenderingFaceMode renderingFaceMode { get; }
 
-        //Case solid
+        public byte lightResistence { get; } 
+
         public TextureCoord[] textureCoordsFaces { get; }
+        public bool hasLightScattering { get; }
 
 
     }

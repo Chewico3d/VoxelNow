@@ -8,15 +8,17 @@ namespace VoxelNow.Core {
 
         public ushort[] voxels;
         public byte[] voxelsState;
-        public ushort[] lightValue;//rrrrggggbbbbssss
+        public byte[] sunLight;//rrrrggggbbbbssss
+        public byte[] fluid;
 
 
         public Chunk(int IDx, int IDy, int IDz) {
             int voxelCount = GenerationConstants.voxelSizeX * GenerationConstants.voxelSizeY
                 * GenerationConstants.voxelSizeZ;
             voxels = new ushort[voxelCount];
-            voxelsState = new byte[voxelCount];
-            lightValue = new ushort[voxelCount];
+            //voxelsState = new byte[voxelCount];
+            sunLight = new byte[voxelCount];
+            fluid = new byte[voxelCount];
 
             this.IDx = IDx;
             this.IDy = IDy;

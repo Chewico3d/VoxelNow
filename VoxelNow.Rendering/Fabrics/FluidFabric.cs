@@ -43,7 +43,7 @@ namespace VoxelNow.Rendering.Fabrics {
 
                 uint initialIndex = (uint)v_Position.Count / 3;
 
-                for(int vertex = 0; vertex < 4; vertex++) {
+                for (int vertex = 0; vertex < 4; vertex++) {
 
                     int direction = 3;
                     int verticesPerFaceRow = direction * 4 + vertex;
@@ -51,6 +51,10 @@ namespace VoxelNow.Rendering.Fabrics {
                     int xPos = VoxelData.cubeVerticesPositions[VoxelData.verticesPerFace[verticesPerFaceRow] * 3 + 0] + x;
                     int yPos = VoxelData.cubeVerticesPositions[VoxelData.verticesPerFace[verticesPerFaceRow] * 3 + 1] + y;
                     int zPos = VoxelData.cubeVerticesPositions[VoxelData.verticesPerFace[verticesPerFaceRow] * 3 + 2] + z;
+
+                    xPos *= 7;
+                    yPos *= 7 - 1;
+                    zPos *= 7;
 
                     v_Position.Add((byte)xPos);
                     v_Position.Add((byte)yPos);

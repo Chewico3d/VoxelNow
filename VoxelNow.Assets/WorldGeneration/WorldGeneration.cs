@@ -54,7 +54,6 @@ namespace VoxelNow.Assets.WorldGeneration
                             chunkDatabase.SetVoxel(x, y, z, 2);
                         else {
                             if(y + 1 >= initialHeight) {
-
                                 bool IsTree;
                                 IsTree = ((float)x) % 5 == 0;
                                 IsTree = IsTree & ((float)z) % 5 == 0;

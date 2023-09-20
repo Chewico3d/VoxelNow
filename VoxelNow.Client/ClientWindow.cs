@@ -25,6 +25,10 @@ namespace VoxelNow.Client {
 
             GL.ClearColor(0f, 0f, 0, 1f);
             GL.Clear(ClearBufferMask.ColorBufferBit);
+
+            GL.Enable(EnableCap.Blend);
+            GL.BlendFunc(BlendingFactor.SrcAlpha, BlendingFactor.OneMinusSrcAlpha);
+
             SwapBuffers();
 
             GL.ClearColor(0.2f, 0.4f, 0.6f, 1f);

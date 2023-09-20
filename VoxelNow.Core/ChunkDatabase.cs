@@ -12,6 +12,7 @@ namespace VoxelNow.Core {
 
         public readonly Chunk[] chunks;
         public Queue<(int, int, int)> proceduralVoxel = new Queue<(int, int, int)> ();
+        WaterBehaviour waterBehaviour;
 
         public ChunkDatabase(int sizeX, int sizeY, int sizeZ) {
             this.sizeX = sizeX;
@@ -25,6 +26,8 @@ namespace VoxelNow.Core {
                         chunks[GetChunkID(x,y,z)] = new Chunk(x, y, z);
                     }
             }
+
+            waterBehaviour = new WaterBehaviour(this);
         }
 
         public void GenerateTerrain() {
@@ -40,7 +43,13 @@ namespace VoxelNow.Core {
                 AssetLoader.proceduralVoxels[proceduralID].GenerateAt(this, proceduralVoxelPos.Item1, proceduralVoxelPos.Item2, proceduralVoxelPos.Item3);
             }
 
+            SetWaterValue(100, 200, 100, 127);
+            waterBehaviour.AddWaterPropagation(100, 200, 100);
+
+            for (int x = 0; x < 800; x++)
+                waterBehaviour.Propagate();
             VoxelShadow.GenerateAllChunkShadows(this);
+
 
         }
 

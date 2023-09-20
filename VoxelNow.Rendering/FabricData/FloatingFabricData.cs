@@ -26,5 +26,7 @@ namespace VoxelNow.Rendering.FabricData {
             v_Position.Add(zPos);
         }
 
+        
+
     }
 }

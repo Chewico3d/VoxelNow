@@ -52,12 +52,13 @@ namespace VoxelNow.Rendering
 
             renderCollections[2].Draw(mainRenderCamera, mapMaterial);
 
-            renderCollections[3].Draw(mainRenderCamera, fluidMaterial);
 
             solidChunkMaterial.SetSun(1, 3, 2);
             solidChunkMaterial.SetInvertedCamera(mainRenderCamera);
             renderCollections[1].Draw(mainRenderCamera, solidChunkMaterial);
             renderCollections[0].Draw(mainRenderCamera, floatingMaterial);
+
+            renderCollections[3].Draw(mainRenderCamera, fluidMaterial);
 
         }
         private int GetRenderObjectID(uint ID) {
@@ -108,7 +109,12 @@ namespace VoxelNow.Rendering
             (uint, IFabricData) fabricData = objectsToBuild.Dequeue();
             IObjectFabric objectFabric = fabrics[GetRenderObjectID(fabricData.Item1)];
 
+
             IMeshData generatedMeshData = objectFabric.GenerateMeshData(fabricData.Item2);
+
+
+            if (generatedMeshData == null)
+                return;
             objectsToLoad.Enqueue((fabricData.Item1, generatedMeshData));
 
         }

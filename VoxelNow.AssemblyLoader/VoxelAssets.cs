@@ -64,5 +64,11 @@ namespace VoxelNow.AssemblyLoader {
         public static ushort GetProceduralID(ushort ID) {
             return proceduralID[ID];
         }
+
+        public static bool CanWaterPass(ushort ID) {
+            if (IsSolid(ID))
+                return false;
+            return true;
+        }
     }
 }

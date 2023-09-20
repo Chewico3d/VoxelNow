@@ -48,6 +48,8 @@
 
         };
 
+        internal static int[] sideOnlyDirections = { 0, 1, 4, 5 };
+
         /*
         internal static void CalculateAmbientOcclusion() {
             ambientOclusionCheckDirection = new int[6 * 4 * 2 * 3];
